@@ -10,51 +10,51 @@ import jakarta.persistence.Table;
 
 public class modelos {
     @Id
-    private Integer codmodelo;
-    private String diseniomodelo;
-    private String tecnologiamodelo;
-    private String seeguridadmodelo;
-    private String interiormodelo;
+    private Integer cod_modelo;
+    private String diseño_modelo;
+    private String tecnologia_modelo;
+    private String seeguridad_modelo;
+    private String interior_modelo;
     private Double precio;
 
-    public Integer getCodmodelo() {
-        return codmodelo;
+    public Integer getCod_modelo() {
+        return cod_modelo;
     }
 
-    public void setCodmodelo(Integer codmodelo) {
-        this.codmodelo = codmodelo;
+    public void setCod_modelo(Integer cod_modelo) {
+        this.cod_modelo = cod_modelo;
     }
 
-    public String getDiseniomodelo() {
-        return diseniomodelo;
+    public String getDiseño_modelo() {
+        return diseño_modelo;
     }
 
-    public void setDiseniomodelo(String diseniomodelo) {
-        this.diseniomodelo = diseniomodelo;
+    public void setDiseño_modelo(String diseño_modelo) {
+        this.diseño_modelo = diseño_modelo;
     }
 
-    public String getTecnologiamodelo() {
-        return tecnologiamodelo;
+    public String getTecnologia_modelo() {
+        return tecnologia_modelo;
     }
 
-    public void setTecnologiamodelo(String tecnologiamodelo) {
-        this.tecnologiamodelo = tecnologiamodelo;
+    public void setTecnologia_modelo(String tecnologia_modelo) {
+        this.tecnologia_modelo = tecnologia_modelo;
     }
 
-    public String getSeeguridadmodelo() {
-        return seeguridadmodelo;
+    public String getSeeguridad_modelo() {
+        return seeguridad_modelo;
     }
 
-    public void setSeeguridadmodelo(String seeguridadmodelo) {
-        this.seeguridadmodelo = seeguridadmodelo;
+    public void setSeeguridad_modelo(String seeguridad_modelo) {
+        this.seeguridad_modelo = seeguridad_modelo;
     }
 
-    public String getInteriormodelo() {
-        return interiormodelo;
+    public String getInterior_modelo() {
+        return interior_modelo;
     }
 
-    public void setInteriormodelo(String interiormodelo) {
-        this.interiormodelo = interiormodelo;
+    public void setInterior_modelo(String interior_modelo) {
+        this.interior_modelo = interior_modelo;
     }
 
     public Double getPrecio() {

@@ -6,44 +6,52 @@ import jakarta.persistence.*;
 @Table (name = "concesionaria")
 public class concesionarias {
     @Id
-    private Integer codconcesionaria;
-    private String nombreconcesionaria;
-    private Integer cantidadtrabajaconcesionaria;
-    private String direccionconcesionaria;
+    private Integer cod_concesionaria;
+    private String nombre_concesionaria;
+    private Integer cantidad_trabaja_concesionaria;
+    private String direccion_concesionaria;
 
     @ManyToOne
-    @JoinColumn(name = "codproveedor")
+    @JoinColumn(name = "cod_proveedor")
     private proveedores proveedores;
 
-    public Integer getCodconcesionaria() {
-        return codconcesionaria;
+    public Integer getCod_concesionaria() {
+        return cod_concesionaria;
     }
 
-    public void setCodconcesionaria(Integer codconcesionaria) {
-        this.codconcesionaria = codconcesionaria;
+    public void setCod_concesionaria(Integer cod_concesionaria) {
+        this.cod_concesionaria = cod_concesionaria;
     }
 
-    public String getNombreconcesionaria() {
-        return nombreconcesionaria;
+    public String getNombre_concesionaria() {
+        return nombre_concesionaria;
     }
 
-    public void setNombreconcesionaria(String nombreconcesionaria) {
-        this.nombreconcesionaria = nombreconcesionaria;
+    public void setNombre_concesionaria(String nombre_concesionaria) {
+        this.nombre_concesionaria = nombre_concesionaria;
     }
 
-    public Integer getCantidadtrabajaconcesionaria() {
-        return cantidadtrabajaconcesionaria;
+    public Integer getCantidad_trabaja_concesionaria() {
+        return cantidad_trabaja_concesionaria;
     }
 
-    public void setCantidadtrabajaconcesionaria(Integer cantidadtrabajaconcesionaria) {
-        this.cantidadtrabajaconcesionaria = cantidadtrabajaconcesionaria;
+    public void setCantidad_trabaja_concesionaria(Integer cantidad_trabaja_concesionaria) {
+        this.cantidad_trabaja_concesionaria = cantidad_trabaja_concesionaria;
     }
 
-    public String getDireccionconcesionaria() {
-        return direccionconcesionaria;
+    public String getDireccion_concesionaria() {
+        return direccion_concesionaria;
     }
 
-    public void setDireccionconcesionaria(String direccionconcesionaria) {
-        this.direccionconcesionaria = direccionconcesionaria;
+    public void setDireccion_concesionaria(String direccion_concesionaria) {
+        this.direccion_concesionaria = direccion_concesionaria;
+    }
+
+    public proveedores getProveedores() {
+        return proveedores;
+    }
+
+    public void setProveedores(proveedores proveedores) {
+        this.proveedores = proveedores;
     }
 }

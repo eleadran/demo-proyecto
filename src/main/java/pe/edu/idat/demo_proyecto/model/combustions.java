@@ -8,22 +8,22 @@ import jakarta.persistence.Table;
 @Table (name = "combustion")
 public class combustions {
     @Id
-    private Integer codcombus;
-    private String tipocombucombus;
+    private Integer cod_combus;
+    private String tipocombu_combus;
 
-    public Integer getCodcombus() {
-        return codcombus;
+    public Integer getCod_combus() {
+        return cod_combus;
     }
 
-    public void setCodcombus(Integer codcombus) {
-        this.codcombus = codcombus;
+    public void setCod_combus(Integer cod_combus) {
+        this.cod_combus = cod_combus;
     }
 
-    public String getTipocombucombus() {
-        return tipocombucombus;
+    public String getTipocombu_combus() {
+        return tipocombu_combus;
     }
 
-    public void setTipocombucombus(String tipocombucombus) {
-        this.tipocombucombus = tipocombucombus;
+    public void setTipocombu_combus(String tipocombu_combus) {
+        this.tipocombu_combus = tipocombu_combus;
     }
 }

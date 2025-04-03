@@ -8,40 +8,40 @@ import java.io.Serializable;
 
 @Embeddable
 public class cods implements Serializable {
-    private Integer codcliente;
-    private Integer codvendedor;
-    private Integer codvehiculo;
-    private Integer codconcesionaria;
+    private Integer cod_cliente;
+    private Integer cod_vendedor;
+    private Integer cod_vehiculo;
+    private Integer cod_concesionaria;
 
-    public Integer getCodcliente() {
-        return codcliente;
+    public Integer getCod_cliente() {
+        return cod_cliente;
     }
 
-    public void setCodcliente(Integer codcliente) {
-        this.codcliente = codcliente;
+    public void setCod_cliente(Integer cod_cliente) {
+        this.cod_cliente = cod_cliente;
     }
 
-    public Integer getCodvendedor() {
-        return codvendedor;
+    public Integer getCod_vendedor() {
+        return cod_vendedor;
     }
 
-    public void setCodvendedor(Integer codvendedor) {
-        this.codvendedor = codvendedor;
+    public void setCod_vendedor(Integer cod_vendedor) {
+        this.cod_vendedor = cod_vendedor;
     }
 
-    public Integer getCodvehiculo() {
-        return codvehiculo;
+    public Integer getCod_vehiculo() {
+        return cod_vehiculo;
     }
 
-    public void setCodvehiculo(Integer codvehiculo) {
-        this.codvehiculo = codvehiculo;
+    public void setCod_vehiculo(Integer cod_vehiculo) {
+        this.cod_vehiculo = cod_vehiculo;
     }
 
-    public Integer getCodconcesionaria() {
-        return codconcesionaria;
+    public Integer getCod_concesionaria() {
+        return cod_concesionaria;
     }
 
-    public void setCodconcesionaria(Integer codconcesionaria) {
-        this.codconcesionaria = codconcesionaria;
+    public void setCod_concesionaria(Integer cod_concesionaria) {
+        this.cod_concesionaria = cod_concesionaria;
     }
 }

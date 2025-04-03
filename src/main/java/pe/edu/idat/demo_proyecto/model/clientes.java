@@ -9,59 +9,59 @@ import jakarta.persistence.Table;
 @Table (name="cliente")
 public class clientes {
     @Id
-    private Integer codcliente;
-    private String nombrecliente;
-    private String apellidocliente;
-    private String trabajocliente;
-    private Integer telefonocliente;
-    private String direccioncliente;
+    private Integer cod_cliente;
+    private String nombre_cliente;
+    private String apellido_cliente;
+    private String trabajo_cliente;
+    private Integer telefono_cliente;
+    private String direccion_cliente;
 
-    public Integer getCodcliente() {
-        return codcliente;
+    public Integer getCod_cliente() {
+        return cod_cliente;
     }
 
-    public void setCodcliente(Integer codcliente) {
-        this.codcliente = codcliente;
+    public void setCod_cliente(Integer cod_cliente) {
+        this.cod_cliente = cod_cliente;
     }
 
-    public String getNombrecliente() {
-        return nombrecliente;
+    public String getNombre_cliente() {
+        return nombre_cliente;
     }
 
-    public void setNombrecliente(String nombrecliente) {
-        this.nombrecliente = nombrecliente;
+    public void setNombre_cliente(String nombre_cliente) {
+        this.nombre_cliente = nombre_cliente;
     }
 
-    public String getApellidocliente() {
-        return apellidocliente;
+    public String getApellido_cliente() {
+        return apellido_cliente;
     }
 
-    public void setApellidocliente(String apellidocliente) {
-        this.apellidocliente = apellidocliente;
+    public void setApellido_cliente(String apellido_cliente) {
+        this.apellido_cliente = apellido_cliente;
     }
 
     public String getTrabajo_cliente() {
-        return trabajocliente;
+        return trabajo_cliente;
     }
 
-    public void setTrabajocliente(String trabajo_cliente) {
-        this.trabajocliente = trabajo_cliente;
+    public void setTrabajo_cliente(String trabajo_cliente) {
+        this.trabajo_cliente = trabajo_cliente;
     }
 
-    public Integer getTelefonocliente() {
-        return telefonocliente;
+    public Integer getTelefono_cliente() {
+        return telefono_cliente;
     }
 
-    public void setTelefonocliente(Integer telefonocliente) {
-        this.telefonocliente = telefonocliente;
+    public void setTelefono_cliente(Integer telefono_cliente) {
+        this.telefono_cliente = telefono_cliente;
     }
 
-    public String getDireccioncliente() {
-        return direccioncliente;
+    public String getDireccion_cliente() {
+        return direccion_cliente;
     }
 
-    public void setDireccioncliente(String direccioncliente) {
-        this.direccioncliente = direccioncliente;
+    public void setDireccion_cliente(String direccion_cliente) {
+        this.direccion_cliente = direccion_cliente;
     }
 }
 

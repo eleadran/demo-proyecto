@@ -8,49 +8,49 @@ import jakarta.persistence.Table;
 @Table(name="proveedor")
 public class proveedores {
     @Id
-    private Integer codproveedor;
-    private String nombreproveedor;
-    private Integer telefonoproveedor;
-    private Integer stockproveedor;
-    private String direccionproveedor;
+    private Integer cod_proveedor;
+    private String nombre_proveedor;
+    private Integer telefono_proveedor;
+    private Integer stock_proveedor;
+    private String direccion_proveedor;
 
-    public Integer getCodproveedor() {
-        return codproveedor;
+    public Integer getCod_proveedor() {
+        return cod_proveedor;
     }
 
-    public void setCodproveedor(Integer codproveedor) {
-        this.codproveedor = codproveedor;
+    public void setCod_proveedor(Integer cod_proveedor) {
+        this.cod_proveedor = cod_proveedor;
     }
 
-    public String getNombreproveedor() {
-        return nombreproveedor;
+    public String getNombre_proveedor() {
+        return nombre_proveedor;
     }
 
-    public void setNombreproveedor(String nombreproveedor) {
-        this.nombreproveedor = nombreproveedor;
+    public void setNombre_proveedor(String nombre_proveedor) {
+        this.nombre_proveedor = nombre_proveedor;
     }
 
-    public Integer getTelefonoproveedor() {
-        return telefonoproveedor;
+    public Integer getTelefono_proveedor() {
+        return telefono_proveedor;
     }
 
-    public void setTelefonoproveedor(Integer telefonoproveedor) {
-        this.telefonoproveedor = telefonoproveedor;
+    public void setTelefono_proveedor(Integer telefono_proveedor) {
+        this.telefono_proveedor = telefono_proveedor;
     }
 
-    public Integer getStockproveedor() {
-        return stockproveedor;
+    public Integer getStock_proveedor() {
+        return stock_proveedor;
     }
 
-    public void setStockproveedor(Integer stockproveedor) {
-        this.stockproveedor = stockproveedor;
+    public void setStock_proveedor(Integer stock_proveedor) {
+        this.stock_proveedor = stock_proveedor;
     }
 
-    public String getDireccionproveedor() {
-        return direccionproveedor;
+    public String getDireccion_proveedor() {
+        return direccion_proveedor;
     }
 
-    public void setDireccionproveedor(String direccionproveedor) {
-        this.direccionproveedor = direccionproveedor;
+    public void setDireccion_proveedor(String direccion_proveedor) {
+        this.direccion_proveedor = direccion_proveedor;
     }
 }

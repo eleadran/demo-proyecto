@@ -8,31 +8,31 @@ import jakarta.persistence.Table;
 @Table (name = "marca")
 public class marcas {
     @Id
-    private  Integer codmarca;
-    private String nombremarca;
-    private Integer stockmarca;
+    private  Integer cod_marca;
+    private String nombre_marca;
+    private Integer stock_marca;
 
-    public Integer getCodmarca() {
-        return codmarca;
+    public Integer getCod_marca() {
+        return cod_marca;
     }
 
-    public void setCodmarca(Integer codmarca) {
-        this.codmarca = codmarca;
+    public void setCod_marca(Integer cod_marca) {
+        this.cod_marca = cod_marca;
     }
 
-    public String getNombremarca() {
-        return nombremarca;
+    public String getNombre_marca() {
+        return nombre_marca;
     }
 
-    public void setNombremarca(String nombremarca) {
-        this.nombremarca = nombremarca;
+    public void setNombre_marca(String nombre_marca) {
+        this.nombre_marca = nombre_marca;
     }
 
-    public Integer getStockmarca() {
-        return stockmarca;
+    public Integer getStock_marca() {
+        return stock_marca;
     }
 
-    public void setStockmarca(Integer stockmarca) {
-        this.stockmarca = stockmarca;
+    public void setStock_marca(Integer stock_marca) {
+        this.stock_marca = stock_marca;
     }
 }

@@ -8,49 +8,49 @@ import jakarta.persistence.Table;
 @Table(name="vendedor")
 public class vendedores {
     @Id
-    private Integer codvendedor;
-    private String nombrevendedor;
-    private String apellidovendedor;
-    private Double sueldovendedor;
-    private Integer ventasvendedor;
+    private Integer cod_vendedor;
+    private String nombre_vendedor;
+    private String apellido_vendedor;
+    private Double sueldo_vendedor;
+    private Integer ventas_vendedor;
 
-    public Integer getCodvendedor() {
-        return codvendedor;
+    public Integer getCod_vendedor() {
+        return cod_vendedor;
     }
 
-    public void setCodvendedor(Integer codvendedor) {
-        this.codvendedor = codvendedor;
+    public void setCod_vendedor(Integer cod_vendedor) {
+        this.cod_vendedor = cod_vendedor;
     }
 
-    public String getNombrevendedor() {
-        return nombrevendedor;
+    public String getNombre_vendedor() {
+        return nombre_vendedor;
     }
 
-    public void setNombrevendedor(String nombrevendedor) {
-        this.nombrevendedor = nombrevendedor;
+    public void setNombre_vendedor(String nombre_vendedor) {
+        this.nombre_vendedor = nombre_vendedor;
     }
 
-    public String getApellidovendedor() {
-        return apellidovendedor;
+    public String getApellido_vendedor() {
+        return apellido_vendedor;
     }
 
-    public void setApellidovendedor(String apellidovendedor) {
-        this.apellidovendedor = apellidovendedor;
+    public void setApellido_vendedor(String apellido_vendedor) {
+        this.apellido_vendedor = apellido_vendedor;
     }
 
-    public Double getSueldovendedor() {
-        return sueldovendedor;
+    public Double getSueldo_vendedor() {
+        return sueldo_vendedor;
     }
 
-    public void setSueldovendedor(Double sueldovendedor) {
-        this.sueldovendedor = sueldovendedor;
+    public void setSueldo_vendedor(Double sueldo_vendedor) {
+        this.sueldo_vendedor = sueldo_vendedor;
     }
 
-    public Integer getVentasvendedor() {
-        return ventasvendedor;
+    public Integer getVentas_vendedor() {
+        return ventas_vendedor;
     }
 
-    public void setVentasvendedor(Integer ventasvendedor) {
-        this.ventasvendedor = ventasvendedor;
+    public void setVentas_vendedor(Integer ventas_vendedor) {
+        this.ventas_vendedor = ventas_vendedor;
     }
 }

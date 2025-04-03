@@ -8,21 +8,45 @@ import java.sql.Date;
 @Table(name="vehiculo")
 public class vehiculos {
     @Id
-    private Integer codvehiculo;
-    private String colorvehiculo;
-    private Date añovehiculo;
+    private Integer cod_vehiculo;
+    private String color_vehiculo;
+    private Date año_vehiculo;
 
     @ManyToOne
-    @JoinColumn(name = "codcombus")
+    @JoinColumn(name = "cod_combus")
     private combustions combustions;
 
     @ManyToOne
-    @JoinColumn(name = "codmodelo")
+    @JoinColumn(name = "cod_modelo")
     private modelos modelos;
 
     @ManyToOne
-    @JoinColumn(name = "codmarca")
+    @JoinColumn(name = "cod_marca")
     private marcas marcas;
+
+    public Integer getCod_vehiculo() {
+        return cod_vehiculo;
+    }
+
+    public void setCod_vehiculo(Integer cod_vehiculo) {
+        this.cod_vehiculo = cod_vehiculo;
+    }
+
+    public String getColor_vehiculo() {
+        return color_vehiculo;
+    }
+
+    public void setColor_vehiculo(String color_vehiculo) {
+        this.color_vehiculo = color_vehiculo;
+    }
+
+    public Date getAño_vehiculo() {
+        return año_vehiculo;
+    }
+
+    public void setAño_vehiculo(Date año_vehiculo) {
+        this.año_vehiculo = año_vehiculo;
+    }
 
     public combustions getCombustions() {
         return combustions;
@@ -46,29 +70,5 @@ public class vehiculos {
 
     public void setMarcas(marcas marcas) {
         this.marcas = marcas;
-    }
-
-    public Integer getCodvehiculo() {
-        return codvehiculo;
-    }
-
-    public void setCodvehiculo(Integer codvehiculo) {
-        this.codvehiculo = codvehiculo;
-    }
-
-    public String getColorvehiculo() {
-        return colorvehiculo;
-    }
-
-    public void setColorvehiculo(String colorvehiculo) {
-        this.colorvehiculo = colorvehiculo;
-    }
-
-    public Date getAñovehiculo() {
-        return añovehiculo;
-    }
-
-    public void setAñovehiculo(Date añovehiculo) {
-        this.añovehiculo = añovehiculo;
     }
 }
