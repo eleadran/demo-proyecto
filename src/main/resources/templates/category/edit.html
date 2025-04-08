@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head th:insert="~{layout::head}">
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<nav th:insert="~{layout::menu}"></nav>
+<br />
+<div class="card">
+  <div class="card-header text-bg-secondary">
+    Mantenimiento de Categorías
+  </div>
+  <div class="card-body">
+    <h5 class="card-title">Actualizar de categoría</h5>
+    <hr />
+    <form th:action="@{/category/save}" method="post" th:object="${category}">
+      <input type="hidden" th:field="*{categoryid}" >
+      <div class="form-floating mb-3">
+        <input type="text" class="form-control" id="txtcategoryname" th:field="*{categoryname}"
+               placeholder="name@example.com">
+        <label for="txtcategoryname">Nombre de categoría</label>
+      </div>
+      <div class="form-floating mb-3">
+        <input type="text" class="form-control" id="txtdescription" th:field="*{description}"
+               placeholder="name@example.com">
+        <label for="txtdescription">Descripción de la categoría</label>
+      </div>
+      <button type="submit" class="btn btn-primary">Actualizar</button>
+    </form>
+  </div>
+</div>
+</body>
+</html>

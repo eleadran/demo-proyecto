@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head th:insert="~{layout::head}">
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<nav th:insert="~{layout::menu}"></nav>
+<br />
+<div class="card">
+    <div class="card-header text-bg-secondary">
+        Mantenimiento de Productos
+    </div>
+    <div class="card-body">
+        <h5 class="card-title">Lista de productos</h5>
+        <a th:href="@{/product/create}" class="btn btn-primary">Agregar</a>
+
+        <hr />
+        <table class="table">
+            <thead>
+            <tr>
+                <th scope="col">ID</th>
+                <th scope="col">Producto</th>
+                <th scope="col">Precio Unitario</th>
+                <th scope="col">Stock</th>
+                <th scope="col">Categoria</th>
+                <th scope="col">Proveedor</th>
+                <th scope="col">Editar</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="product : ${products}">
+                <td th:text="${product.productid}"></td>
+                <td th:text="${product.productname}"></td>
+                <td th:text="${product.unitprice}"></td>
+                <td th:text="${product.unitsinstock}"></td>
+                <td th:text="${product.category.categoryname}"></td>
+                <td th:text="${product.supplier.companyname}"></td>
+                <td>
+                    <a th:href="@{/product/edit/{id}(id=${product.productid})}" class="btn btn-warning">Editar</a>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+
+    </div>
+</div>
+
+</body>
+</html>
