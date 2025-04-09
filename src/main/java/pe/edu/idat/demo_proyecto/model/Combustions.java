@@ -6,7 +6,7 @@ import jakarta.persistence.Table;
 
 @Entity
 @Table (name = "combustion")
-public class combustions {
+public class Combustions {
     @Id
     private Integer cod_combus;
     private String tipocombu_combus;

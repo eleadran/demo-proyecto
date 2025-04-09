@@ -4,7 +4,7 @@ import jakarta.persistence.*;
 
 @Entity
 @Table (name = "concesionaria")
-public class concesionarias {
+public class Concesionarias {
     @Id
     private Integer cod_concesionaria;
     private String nombre_concesionaria;
@@ -13,7 +13,7 @@ public class concesionarias {
 
     @ManyToOne
     @JoinColumn(name = "cod_proveedor")
-    private proveedores proveedores;
+    private Proveedores proveedores;
 
     public Integer getCod_concesionaria() {
         return cod_concesionaria;
@@ -47,11 +47,11 @@ public class concesionarias {
         this.direccion_concesionaria = direccion_concesionaria;
     }
 
-    public proveedores getProveedores() {
+    public Proveedores getProveedores() {
         return proveedores;
     }
 
-    public void setProveedores(proveedores proveedores) {
+    public void setProveedores(Proveedores proveedores) {
         this.proveedores = proveedores;
     }
 }

@@ -6,7 +6,7 @@ import java.sql.Date;
 
 @Entity
 @Table(name="vehiculo")
-public class vehiculos {
+public class Vehiculos {
     @Id
     private Integer cod_vehiculo;
     private String color_vehiculo;
@@ -14,15 +14,15 @@ public class vehiculos {
 
     @ManyToOne
     @JoinColumn(name = "cod_combus")
-    private combustions combustions;
+    private Combustions combustions;
 
     @ManyToOne
     @JoinColumn(name = "cod_modelo")
-    private modelos modelos;
+    private Modelos modelos;
 
     @ManyToOne
     @JoinColumn(name = "cod_marca")
-    private marcas marcas;
+    private Marcas marcas;
 
     public Integer getCod_vehiculo() {
         return cod_vehiculo;
@@ -48,27 +48,27 @@ public class vehiculos {
         this.año_vehiculo = año_vehiculo;
     }
 
-    public combustions getCombustions() {
+    public Combustions getCombustions() {
         return combustions;
     }
 
-    public void setCombustions(combustions combustions) {
+    public void setCombustions(Combustions combustions) {
         this.combustions = combustions;
     }
 
-    public modelos getModelos() {
+    public Modelos getModelos() {
         return modelos;
     }
 
-    public void setModelos(modelos modelos) {
+    public void setModelos(Modelos modelos) {
         this.modelos = modelos;
     }
 
-    public marcas getMarcas() {
+    public Marcas getMarcas() {
         return marcas;
     }
 
-    public void setMarcas(marcas marcas) {
+    public void setMarcas(Marcas marcas) {
         this.marcas = marcas;
     }
 }

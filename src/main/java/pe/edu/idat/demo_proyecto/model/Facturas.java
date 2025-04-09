@@ -7,9 +7,9 @@ import java.util.Date;
 
 @Entity
 @Table (name="factura")
-public class facturas {
+public class Facturas {
     @EmbeddedId
-    private cods id;
+    private Cods id;
 
     private Date fecha_factura;
     private Double importe_venta;
@@ -30,11 +30,11 @@ public class facturas {
         this.importe_venta = importe_venta;
     }
 
-    public cods getId() {
+    public Cods getId() {
         return id;
     }
 
-    public void setId(cods id) {
+    public void setId(Cods id) {
         this.id = id;
     }
 }

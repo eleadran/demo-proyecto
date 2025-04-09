@@ -8,7 +8,7 @@ import jakarta.persistence.Table;
 @Entity
 @Table (name="modelo")
 
-public class modelos {
+public class Modelos {
     @Id
     private Integer cod_modelo;
     private String diseño_modelo;

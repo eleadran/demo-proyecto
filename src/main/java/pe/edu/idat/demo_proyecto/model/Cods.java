@@ -7,7 +7,7 @@ import java.io.Serializable;
 
 
 @Embeddable
-public class cods implements Serializable {
+public class Cods implements Serializable {
     private Integer cod_factura;
     private Integer cod_cliente;
     private Integer cod_vendedor;

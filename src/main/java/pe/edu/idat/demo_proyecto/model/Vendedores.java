@@ -6,7 +6,7 @@ import jakarta.persistence.Table;
 
 @Entity
 @Table(name="vendedor")
-public class vendedores {
+public class Vendedores {
     @Id
     private Integer cod_vendedor;
     private String nombre_vendedor;
