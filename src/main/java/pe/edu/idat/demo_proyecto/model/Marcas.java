@@ -1,5 +1,5 @@
 package pe.edu.idat.demo_proyecto.model;
-
+import jakarta.persistence.*;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
@@ -8,6 +8,7 @@ import jakarta.persistence.Table;
 @Table (name = "marca")
 public class Marcas {
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private  Integer cod_marca;
     private String nombre_marca;
     private Integer stock_marca;

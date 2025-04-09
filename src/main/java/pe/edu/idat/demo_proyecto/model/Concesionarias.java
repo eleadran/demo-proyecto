@@ -1,11 +1,11 @@
 package pe.edu.idat.demo_proyecto.model;
-
 import jakarta.persistence.*;
 
 @Entity
 @Table (name = "concesionaria")
 public class Concesionarias {
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer cod_concesionaria;
     private String nombre_concesionaria;
     private Integer cantidad_trabaja_concesionaria;

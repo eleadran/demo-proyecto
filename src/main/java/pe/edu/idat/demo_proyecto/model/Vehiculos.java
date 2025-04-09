@@ -3,11 +3,13 @@ package pe.edu.idat.demo_proyecto.model;
 import jakarta.persistence.*;
 
 import java.sql.Date;
+import jakarta.persistence.*;
 
 @Entity
 @Table(name="vehiculo")
 public class Vehiculos {
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer cod_vehiculo;
     private String color_vehiculo;
     private Date año_vehiculo;

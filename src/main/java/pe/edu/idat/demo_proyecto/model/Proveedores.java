@@ -3,11 +3,12 @@ package pe.edu.idat.demo_proyecto.model;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
-
+import jakarta.persistence.*;
 @Entity
 @Table(name="proveedor")
 public class Proveedores {
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer cod_proveedor;
     private String nombre_proveedor;
     private Integer telefono_proveedor;

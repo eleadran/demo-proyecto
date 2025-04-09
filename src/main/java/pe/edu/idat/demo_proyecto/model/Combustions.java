@@ -3,11 +3,13 @@ package pe.edu.idat.demo_proyecto.model;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
+import jakarta.persistence.*;
 
 @Entity
 @Table (name = "combustion")
 public class Combustions {
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer cod_combus;
     private String tipocombu_combus;
 

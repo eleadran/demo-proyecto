@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head th:insert="~{layout::head}">
+    <meta charset="UTF-8">
+    <title>Clientes</title>
+</head>
+<body>
+<nav th:insert="~{layout::menu}"></nav>
+<div class="container mt-4">
+    <div class="d-flex justify-content-between mb-3">
+        <h2>Lista de Clientes</h2>
+        <a class="btn btn-success" th:href="@{/clientes/create}">Nuevo Cliente</a>
+    </div>
+
+    <table class="table table-bordered table-hover">
+                <thead class="table-secondary">
+                <tr>
+                    <th scope="col">ID</th>
+                    <th scope="col">Nombre</th>
+                    <th scope="col">Apellido</th>
+                    <th scope="col">Trabajo</th>
+                    <th scope="col">Teléfono</th>
+                    <th scope="col">Dirección</th>
+                    <th scope="col">Acciones</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr th:each="CLIENTE : ${clientes}">
+                    <td th:text="${CLIENTE.cod_cliente}"></td>
+                    <td th:text="${CLIENTE.nombre_cliente}"></td>
+                    <td th:text="${CLIENTE.apellido_cliente}"></td>
+                    <td th:text="${CLIENTE.trabajo_cliente}"></td>
+                    <td th:text="${CLIENTE.telefono_cliente}"></td>
+                    <td th:text="${CLIENTE.direccion_cliente}"></td>
+                    <td>
+
+                        <a th:href="@{/clientes/edit/{id}(id=${CLIENTE.cod_cliente})}" class="btn btn-primary btn-sm">Editar</a>
+                        <a th:href="@{/clientes/delete/{id}(id=${CLIENTE.cod_cliente})}" class="btn btn-danger btn-sm">Eliminar</a>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+
+        </div>
+    </div>
+
+</body>
+</html>

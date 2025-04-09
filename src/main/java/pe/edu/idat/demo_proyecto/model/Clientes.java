@@ -1,14 +1,14 @@
 package pe.edu.idat.demo_proyecto.model;
 
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 
 @Entity
 @Table (name="cliente")
 public class Clientes {
+
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer cod_cliente;
     private String nombre_cliente;
     private String apellido_cliente;

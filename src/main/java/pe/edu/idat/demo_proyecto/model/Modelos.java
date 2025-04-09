@@ -3,13 +3,14 @@ package pe.edu.idat.demo_proyecto.model;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
-
+import jakarta.persistence.*;
 
 @Entity
 @Table (name="modelo")
 
 public class Modelos {
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer cod_modelo;
     private String diseño_modelo;
     private String tecnologia_modelo;

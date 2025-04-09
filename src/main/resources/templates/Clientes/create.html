@@ -9,21 +9,21 @@
   <br />
   <div class="card">
     <div class="card-header text-bg-secondary">
-      Mantenimiento de Categorias
+      Mantenimiento de clientes
     </div>
     <div class="card-body">
-      <h5 class="card-title">Registro de categorías</h5>
+      <h5 class="card-title">Registro de clientes</h5>
       <hr />
-      <form th:action="@{/category/save}" method="post" th:object="${category}">
+      <form th:action="@{/clientes/save}" method="post" th:object="${clientes}">
         <div class="form-floating mb-3">
-          <input type="text" class="form-control" id="txtcategoryname" th:field="*{categoryname}"
+          <input type="text" class="form-control" id="txtnombre_cliente" th:field="*{nombre_cliente}"
                  placeholder="name@example.com">
-          <label for="txtcategoryname">Nombre de categoría</label>
+          <label for="txtnombre_cliente">Nombre de cliente</label>
         </div>
         <div class="form-floating mb-3">
-          <input type="text" class="form-control" id="txtdescription" th:field="*{description}"
+          <input type="text" class="form-control" id="txtapellido_cliente" th:field="*{apellido_cliente}"
                  placeholder="name@example.com">
-          <label for="txtdescription">Descripción de la categoría</label>
+          <label for="txtapellido_cliente">apellido del cliente</label>
         </div>
         <button type="submit" class="btn btn-primary">Registrar</button>
       </form>

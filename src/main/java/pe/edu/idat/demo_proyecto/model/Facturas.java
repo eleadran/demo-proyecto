@@ -1,5 +1,5 @@
 package pe.edu.idat.demo_proyecto.model;
-
+import jakarta.persistence.*;
 import jakarta.persistence.EmbeddedId;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Table;
