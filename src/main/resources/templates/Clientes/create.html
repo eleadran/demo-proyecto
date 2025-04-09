@@ -14,7 +14,7 @@
     <div class="card-body">
       <h5 class="card-title">Registro de clientes</h5>
       <hr />
-      <form th:action="@{/clientes/save}" method="post" th:object="${clientes}">
+      <form th:action="@{/clientes/save}" method="post" th:object="${cliente}">
         <div class="form-floating mb-3">
           <input type="text" class="form-control" id="txtnombre_cliente" th:field="*{nombre_cliente}"
                  placeholder="name@example.com">
@@ -24,6 +24,21 @@
           <input type="text" class="form-control" id="txtapellido_cliente" th:field="*{apellido_cliente}"
                  placeholder="name@example.com">
           <label for="txtapellido_cliente">apellido del cliente</label>
+        </div>
+        <div class="form-floating mb-3">
+          <input type="text" class="form-control" id="txttrabajo_cliente" th:field="*{trabajo_cliente}"
+                 placeholder="name@example.com">
+          <label for="txttrabajo_cliente">trabajo del cliente</label>
+        </div>
+        <div class="form-floating mb-3">
+          <input type="text" class="form-control" id="txttelefono_cliente" th:field="*{telefono_cliente}"
+                 placeholder="name@example.com">
+          <label for="txttelefono_cliente">telefono del cliente</label>
+        </div>
+        <div class="form-floating mb-3">
+          <input type="text" class="form-control" id="txtdireccion_cliente" th:field="*{direccion_cliente}"
+                 placeholder="name@example.com">
+          <label for="txtdireccion_cliente">direccion del cliente</label>
         </div>
         <button type="submit" class="btn btn-primary">Registrar</button>
       </form>

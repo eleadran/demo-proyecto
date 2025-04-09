@@ -23,7 +23,7 @@ public class ClientesController {
     }
     @GetMapping ("/create")
     public String create (Model model){
-        model.addAttribute("clientes",
+        model.addAttribute("cliente",
                 new Clientes());
         return "clientes/create";
     }
@@ -36,7 +36,7 @@ public class ClientesController {
         return "clientes/edit";
     }
     @PostMapping ("/save")
-    public String save(@ModelAttribute("cliente")
+    public String save(@ModelAttribute("clientes")
                        Clientes clientes){
 
         clientesService.guardarClientes(clientes);
