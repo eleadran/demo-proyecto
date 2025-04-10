@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head th:insert="~{layout::head}">
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<nav th:insert="~{layout::menu}"></nav>
+<br />
+<div class="card">
+  <div class="card-header text-bg-secondary">
+    Mantenimiento de vendedores
+  </div>
+  <div class="card-body">
+    <h5 class="card-title">Actualizar vendedores</h5>
+    <hr />
+    <form th:action="@{/vendedores/save}" method="post" th:object="${vendedor}">
+      <input type="hidden" th:field="*{cod_vendedor}" >
+      <div class="form-floating mb-3">
+        <input type="text" class="form-control" id="txtnombre_vendedor" th:field="*{nombre_vendedor}"
+               placeholder="name@example.com">
+        <label for="txtnombre_vendedor">nombre vendedor</label>
+      </div>
+      <div class="form-floating mb-3">
+        <input type="text" class="form-control" id="txtapellido_vendedor" th:field="*{apellido_vendedor}"
+               placeholder="name@example.com">
+        <label for="txtapellido_vendedor">apellido vendedor</label>
+      </div>
+      <div class="form-floating mb-3">
+        <input type="number" class="form-control" id="txtsueldo_vendedor" th:field="*{sueldo_vendedor}"
+               placeholder="name@example.com">
+        <label for="txtsueldo_vendedor">sueldo vendedor</label>
+      </div>
+      <div class="form-floating mb-3">
+        <input type="number" class="form-control" id="txtventas_vendedor" th:field="*{ventas_vendedor}"
+               placeholder="name@example.com">
+        <label for="txtventas_vendedor">ventas vendedor</label>
+      </div>
+      <button type="submit" class="btn btn-primary">Actualizar</button>
+    </form>
+  </div>
+</div>
+</body>
+</html>

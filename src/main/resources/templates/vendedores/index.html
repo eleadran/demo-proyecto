@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head th:insert="~{layout::head}">
+    <meta charset="UTF-8">
+    <title>vendedores</title>
+</head>
+<body>
+<nav th:insert="~{layout::menu}"></nav>
+<div class="container mt-4">
+    <div class="d-flex justify-content-between mb-3">
+        <h2>Lista de vendedores</h2>
+        <a class="btn btn-success" th:href="@{/vendedores/create}">Nuevo Cliente</a>
+    </div>
+
+    <table class="table table-bordered table-hover">
+                <thead class="table-secondary">
+                <tr>
+                    <th scope="col">ID</th>
+                    <th scope="col">Nombre</th>
+                    <th scope="col">Apellidos</th>
+                    <th scope="col">Sueldo</th>
+                    <th scope="col">Ventas</th>
+                    <th scope="col">Acciones</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr th:each="VENDEDOR : ${vendedores}">
+                    <td th:text="${VENDEDOR.cod_vendedor}"></td>
+                    <td th:text="${VENDEDOR.nombre_vendedor}"></td>
+                    <td th:text="${VENDEDOR.apellido_vendedor}"></td>
+                    <td th:text="${VENDEDOR.sueldo_vendedor}"></td>
+                    <td th:text="${VENDEDOR.ventas_vendedor}"></td>
+                    <td>
+
+                        <a th:href="@{/vendedores/edit/{id}(id=${VENDEDOR.cod_vendedor})}" class="btn btn-primary btn-sm">Editar</a>
+                        <a th:href="@{/vendedores/delete/{id}(id=${VENDEDOR.cod_vendedor})}" class="btn btn-danger btn-sm">Eliminar</a>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+
+        </div>
+    </div>
+
+</body>
+</html>
