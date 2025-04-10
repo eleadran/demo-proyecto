@@ -24,13 +24,10 @@ public class ModelosService {
         return modelosRepository.findById(id).orElse(null);
 
     }
-
-
-    public void guardarFacturas(Modelos modelos){
+    public void guardarModelos(Modelos modelos){
         modelosRepository.save(modelos);
     }
-
-    public void eliminarModelos(int id) {
+    public void eleminarModelos(int id) {
         modelosRepository.deleteById(id);
     }
 }

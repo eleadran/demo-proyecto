@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head th:insert="~{layout::head}">
+    <meta charset="UTF-8">
+    <title>Clientes</title>
+</head>
+<body>
+<nav th:insert="~{layout::menu}"></nav>
+<div class="container mt-4">
+    <div class="d-flex justify-content-between mb-3">
+        <h2>Lista de Clientes</h2>
+        <a class="btn btn-success" th:href="@{/modelos/create}">Nuevo Cliente</a>
+    </div>
+
+    <table class="table table-bordered table-hover">
+                <thead class="table-secondary">
+                <tr>
+                    <th scope="col">ID</th>
+                    <th scope="col">DISEÑO</th>
+                    <th scope="col">Tecnologia</th>
+                    <th scope="col">Seguridad</th>
+                    <th scope="col">Interior</th>
+                    <th scope="col">Precio</th>
+                    <th scope="col">Acciones</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr th:each="MODELO : ${modelos}">
+                    <td th:text="${MODELO.cod_modelo}"></td>
+                    <td th:text="${MODELO.diseno_modelo}"></td>
+                    <td th:text="${MODELO.tecnologia_modelo}"></td>
+                    <td th:text="${MODELO.seguridad_modelo}"></td>
+                    <td th:text="${MODELO.interior_modelo}"></td>
+                    <td th:text="${MODELO.precio}"></td>
+                    <td>
+
+                        <a th:href="@{/modelos/edit/{id}(id=${MODELO.cod_modelo})}" class="btn btn-primary btn-sm">Editar</a>
+                        <a th:href="@{/modelos/delete/{id}(id=${MODELO.cod_modelo})}" class="btn btn-danger btn-sm">Eliminar</a>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+
+        </div>
+    </div>
+
+</body>
+</html>

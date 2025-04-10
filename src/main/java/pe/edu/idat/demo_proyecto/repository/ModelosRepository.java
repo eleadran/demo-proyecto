@@ -7,7 +7,7 @@ import pe.edu.idat.demo_proyecto.model.Modelos;
 public interface ModelosRepository extends JpaRepository<Modelos, Integer> {
 
     @Query(value = """
-            UPDATE products SET diseño_modelo= :diseño_modelo,
+            UPDATE modelo SET diseño_modelo= :diseño_modelo,
             tecnologia_modelo = :tecnologia_modelo,
             seguridad_modelo = :seguridad_modelo,
             interior_modelo = :interior_modelo,

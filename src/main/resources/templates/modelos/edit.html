@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head th:insert="~{layout::head}">
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<nav th:insert="~{layout::menu}"></nav>
+<br />
+<div class="card">
+  <div class="card-header text-bg-secondary">
+    Mantenimiento de modelo
+  </div>
+  <div class="card-body">
+    <h5 class="card-title">Actualizar modelo</h5>
+    <hr />
+    <form th:action="@{/modelos/save}" method="post" th:object="${modelo}">
+      <input type="hidden" th:field="*{cod_modelo}" >
+      <div class="form-floating mb-3">
+        <input type="text" class="form-control" id="txtdiseño_modelo" th:field="*{diseno_modelo}"
+               placeholder="name@example.com">
+        <label for="txtdiseño_modelo">diseño del modelo</label>
+      </div>
+      <div class="form-floating mb-3">
+        <input type="text" class="form-control" id="txttecnologia_modelo" th:field="*{tecnologia_modelo}"
+               placeholder="name@example.com">
+        <label for="txttecnologia_modelo">tecnologia del modelo</label>
+      </div>
+      <div class="form-floating mb-3">
+        <input type="text" class="form-control" id="txtseguridad_modelo" th:field="*{seguridad_modelo}"
+               placeholder="name@example.com">
+        <label for="txtseguridad_modelo">seguridad del modelo</label>
+      </div>
+      <div class="form-floating mb-3">
+        <input type="text" class="form-control" id="txtinterior_modelo" th:field="*{interior_modelo}"
+               placeholder="name@example.com">
+        <label for="txtinterior_modelo">interior del modelo</label>
+      </div>
+      <div class="form-floating mb-3">
+        <input type="number" class="form-control" id="txtprecio" th:field="*{precio}"
+               step="0.01" min="0" required/>
+        <label for="txtprecio">preico </label>
+      </div>
+      <button type="submit" class="btn btn-primary">Actualizar</button>
+    </form>
+  </div>
+</div>
+</body>
+</html>
