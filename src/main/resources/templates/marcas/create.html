@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head th:insert="~{layout::head}">
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+  <nav th:insert="~{layout::menu}"></nav>
+  <br />
+  <div class="card">
+    <div class="card-header text-bg-secondary">
+      Mantenimiento de Marcas
+    </div>
+    <div class="card-body">
+      <h5 class="card-title">Registrar Marcas de Vehiculos</h5>
+      <hr />
+      <form th:action="@{/marcas/save}" method="post" th:object="${marca}">
+        <div class="form-floating mb-3">
+          <input type="text" class="form-control" id="txtnombre_marca" th:field="*{nombre_marca}"
+                 placeholder="name@example.com">
+          <label for="txtnombre_marca">marca del carro</label>
+        </div>
+        <div class="form-floating mb-3">
+          <input type="text" class="form-control" id="txtstock_marca" th:field="*{stock_marca}"
+                 placeholder="name@example.com">
+          <label for="txtstock_marca">stock</label>
+        </div>
+        <button type="submit" class="btn btn-primary">Registrar</button>
+      </form>
+    </div>
+  </div>
+</body>
+</html>
