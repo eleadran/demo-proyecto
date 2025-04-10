@@ -10,8 +10,18 @@ import jakarta.persistence.*;
 public class Combustions {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer cod_combus;
-    private String tipocombu_combus;
+   private Integer cod_combus;
+
+    @Column(name = "tipoCombu_combus")
+    public String tipoCombu_combus;
+
+    public String getTipoCombu_combus() {
+        return tipoCombu_combus;
+    }
+
+    public void setTipoCombu_combus(String tipoCombu_combus) {
+        this.tipoCombu_combus = tipoCombu_combus;
+    }
 
     public Integer getCod_combus() {
         return cod_combus;
@@ -21,11 +31,4 @@ public class Combustions {
         this.cod_combus = cod_combus;
     }
 
-    public String getTipocombu_combus() {
-        return tipocombu_combus;
-    }
-
-    public void setTipocombu_combus(String tipocombu_combus) {
-        this.tipocombu_combus = tipocombu_combus;
-    }
 }

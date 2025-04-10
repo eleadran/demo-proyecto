@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head th:insert="~{layout::head}">
+    <meta charset="UTF-8">
+    <title>Clientes</title>
+</head>
+<body>
+<nav th:insert="~{layout::menu}"></nav>
+<div class="container mt-4">
+    <div class="d-flex justify-content-between mb-3">
+        <h2>Lista de combustible</h2>
+        <a class="btn btn-success" th:href="@{/combustions/create}">Nuevo Cliente</a>
+    </div>
+
+    <table class="table table-bordered table-hover">
+                <thead class="table-secondary">
+                <tr>
+                    <th scope="col">ID</th>
+                    <th scope="col">tipo_combustion</th>
+                    <th scope="col">Acciones</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr th:each="COMBUSTION : ${combustibles}">
+                    <td th:text="${COMBUSTION.cod_combus}"></td>
+                    <td th:text="${COMBUSTION.tipoCombu_combus}"></td>
+                    <td>
+
+                        <a th:href="@{/combustions/edit/{id}(id=${COMBUSTION.cod_combus})}" class="btn btn-primary btn-sm">Editar</a>
+                        <a th:href="@{/combustions/delete/{id}(id=${COMBUSTION.cod_combus})}" class="btn btn-danger btn-sm">Eliminar</a>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+
+        </div>
+    </div>
+
+</body>
+</html>

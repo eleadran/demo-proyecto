@@ -10,7 +10,7 @@ public interface ClientesRepository extends JpaRepository<Clientes, Integer> {
             extends JpaRepository<Clientes, Integer> {
 
         @Query(value = """
-            UPDATE products SET nombre_cliente= :nombre_cliente,
+            UPDATE cliente SET nombre_cliente= :nombre_cliente,
             apellido_cliente = :apellido_cliente,
             trabajo_cliente = :trabajo_cliente,
             telefono_cliente = :telefono_cliente,

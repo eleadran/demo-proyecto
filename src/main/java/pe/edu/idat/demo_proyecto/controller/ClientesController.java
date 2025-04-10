@@ -6,6 +6,7 @@ import org.springframework.web.bind.annotation.*;
 import pe.edu.idat.demo_proyecto.model.Clientes;
 import pe.edu.idat.demo_proyecto.service.ClientesService;
 
+
 @Controller
 @RequestMapping("/clientes")
 public class ClientesController {
