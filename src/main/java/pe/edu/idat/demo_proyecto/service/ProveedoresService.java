@@ -20,17 +20,17 @@ public class ProveedoresService {
 
     }
 
-    public Proveedores obtenerobtenerProveedoresXid (int id){
+    public Proveedores obtenerProveedoresXid (int id){
         return proveedoresRepository.findById(id).orElse(null);
 
     }
 
 
-    public void guardarobtenerProveedores(Proveedores proveedores){
+    public void guardarProveedores(Proveedores proveedores){
         proveedoresRepository.save(proveedores);
     }
 
-    public void eliminarobtenerProveedores(int id) {
+    public void eliminarProveedores(int id) {
         proveedoresRepository.deleteById(id);
     }
 }

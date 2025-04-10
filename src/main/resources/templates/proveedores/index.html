@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head th:insert="~{layout::head}">
+    <meta charset="UTF-8">
+    <title>Clientes</title>
+</head>
+<body>
+<nav th:insert="~{layout::menu}"></nav>
+<div class="container mt-4">
+    <div class="d-flex justify-content-between mb-3">
+        <h2>Lista de Clientes</h2>
+        <a class="btn btn-success" th:href="@{/proveedores/create}">Nuevo Cliente</a>
+    </div>
+
+    <table class="table table-bordered table-hover">
+                <thead class="table-secondary">
+                <tr>
+                    <th scope="col">ID</th>
+                    <th scope="col">Nombre</th>
+                    <th scope="col">Telefono</th>
+                    <th scope="col">Stock</th>
+                    <th scope="col">direccion</th>
+                    <th scope="col">Acciones</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr th:each="PROVEEDOR : ${proveedores}">
+                    <td th:text="${PROVEEDOR.cod_proveedor}"></td>
+                    <td th:text="${PROVEEDOR.nombre_proveedor}"></td>
+                    <td th:text="${PROVEEDOR.telefono_proveedor}"></td>
+                    <td th:text="${PROVEEDOR.stock_proveedor}"></td>
+                    <td th:text="${PROVEEDOR.direccion_proveedor}"></td>
+                    <td>
+
+                        <a th:href="@{/proveedores/edit/{id}(id=${PROVEEDOR.cod_proveedor})}" class="btn btn-primary btn-sm">Editar</a>
+                        <a th:href="@{/proveedores/delete/{id}(id=${PROVEEDOR.cod_proveedor})}" class="btn btn-danger btn-sm">Eliminar</a>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+
+        </div>
+    </div>
+
+</body>
+</html>
