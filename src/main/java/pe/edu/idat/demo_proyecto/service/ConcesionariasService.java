@@ -9,28 +9,29 @@ import java.util.List;
 @Service
 public class ConcesionariasService {
 
-    private final ConcesionariasRepository concesionariasRepository;
-    public ConcesionariasService(ConcesionariasRepository concesionariasRepository) {
-        this.concesionariasRepository = concesionariasRepository;
+    private final ConcesionariasRepository concesionariaRepository;
+
+    public ConcesionariasService(ConcesionariasRepository concesionariaRepository) {
+        this.concesionariaRepository = concesionariaRepository;
     }
 
-    public List<Concesionarias> obtenerConcesionaria (){
-
-        return concesionariasRepository.findAll();
-
+    // Método para obtener todas las concesionarias
+    public List<Concesionarias> obtenerConcesionarias() {
+        return concesionariaRepository.findAll();
     }
 
-    public Concesionarias obtenerConcesionariaXid (int id){
-        return concesionariasRepository.findById(id).orElse(null);
-
+    // Método para obtener una concesionaria por su ID
+    public Concesionarias obtenerConcesionariaPorId(int id) {
+        return concesionariaRepository.findById(id).orElse(null);
     }
 
-
-    public void guardarConcesionaria(Concesionarias concesionarias){
-        concesionariasRepository.save(concesionarias);
+    // Método para guardar una nueva concesionaria o actualizar una existente
+    public void guardarConcesionaria(Concesionarias concesionaria) {
+        concesionariaRepository.save(concesionaria);
     }
 
+    // Método para eliminar una concesionaria por su ID
     public void eliminarConcesionaria(int id) {
-        concesionariasRepository.deleteById(id);
+        concesionariaRepository.deleteById(id);
     }
 }

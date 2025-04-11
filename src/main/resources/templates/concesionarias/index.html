@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head th:insert="~{layout::head}">
+  <meta charset="UTF-8">
+  <title>Concesionarias</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+  <style>
+    .table-hover tbody tr:hover {
+        background-color: #f2f2f2;
+        transition: 0.3s ease-in-out;
+    }
+  </style>
+</head>
+<body>
+<nav th:insert="~{layout::menu}"></nav>
+
+<div class="container mt-5">
+
+  <div class="d-flex justify-content-between align-items-center mb-4">
+    <h2 class="text-primary fw-bold"><i class="bi bi-building me-2"></i>Listado de Concesionarias</h2>
+    <a class="btn btn-success shadow-sm" th:href="@{/concesionarias/create}">
+      <i class="bi bi-plus-circle-fill me-1"></i> Nueva Concesionaria
+    </a>
+  </div>
+
+  <div class="table-responsive shadow-sm">
+    <table class="table table-bordered table-hover align-middle">
+      <thead class="table-dark text-center">
+      <tr>
+        <th>ID</th>
+        <th>Nombre</th>
+        <th>Cantidad Trabajadores</th>
+        <th>Dirección</th>
+        <th>Proveedor</th>
+        <th>Acciones</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr th:each="CONCESIONARIA : ${concesionarias}">
+        <td th:text="${CONCESIONARIA.codConcesionaria}"></td>
+        <td th:text="${CONCESIONARIA.nombreConcesionaria}"></td>
+        <td th:text="${CONCESIONARIA.cantidadTrabajaConcesionaria}"></td>
+        <td th:text="${CONCESIONARIA.direccionConcesionaria}"></td>
+        <td th:text="${CONCESIONARIA.proveedores.nombreProveedor}"></td>
+        <td class="text-center">
+          <a th:href="@{/concesionarias/edit/{id}(id=${CONCESIONARIA.codConcesionaria})}" class="btn btn-sm btn-outline-primary me-1">
+            <i class="bi bi-pencil-fill"></i>
+          </a>
+          <a th:href="@{/concesionarias/delete/{id}(id=${CONCESIONARIA.codConcesionaria})}" class="btn btn-sm btn-outline-danger">
+            <i class="bi bi-trash-fill"></i>
+          </a>
+        </td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+</body>
+</html>
