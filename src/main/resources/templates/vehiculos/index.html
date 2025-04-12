@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head th:insert="~{layout::head}">
+    <meta charset="UTF-8">
+    <title>Vehículos</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <style>
+        .table-hover tbody tr:hover {
+            background-color: #f2f2f2;
+            transition: 0.3s ease-in-out;
+        }
+    </style>
+</head>
+<body>
+<nav th:insert="~{layout::menu}"></nav>
+
+<div class="container mt-5">
+
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <h2 class="text-primary fw-bold"><i class="bi bi-car-front-fill me-2"></i>Listado de Vehículos</h2>
+        <a class="btn btn-success shadow-sm" th:href="@{/vehiculos/create}">
+            <i class="bi bi-plus-circle-fill me-1"></i> Nuevo Vehículo
+        </a>
+    </div>
+
+    <div class="table-responsive shadow-sm">
+        <table class="table table-bordered table-hover align-middle">
+            <thead class="table-dark text-center">
+            <tr>
+                <th>ID</th>
+                <th>Color</th>
+                <th>Año</th>
+                <th>Combustión</th>
+                <th>Marca</th>
+                <th>Modelo</th>
+                <th>Acciones</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="VEHICULO : ${vehiculos}">
+                <td th:text="${VEHICULO.codVehiculo}"></td>
+                <td th:text="${VEHICULO.colorVehiculo}"></td>
+                <td th:text="${VEHICULO.añoVehiculo}"></td>
+                <td class="text-center">
+                    <a th:href="@{/vehiculos/edit/{id}(id=${VEHICULO.codVehiculo})}" class="btn btn-sm btn-outline-primary me-1">
+                        <i class="bi bi-pencil-fill"></i>
+                    </a>
+                    <a th:href="@{/vehiculos/delete/{id}(id=${VEHICULO.codVehiculo})}" class="btn btn-sm btn-outline-danger">
+                        <i class="bi bi-trash-fill"></i>
+                    </a>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+</body>
+</html>
