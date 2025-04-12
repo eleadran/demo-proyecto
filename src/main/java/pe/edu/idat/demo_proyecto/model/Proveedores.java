@@ -9,7 +9,7 @@ import jakarta.persistence.*;
 public class Proveedores {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "cod_Proveedor") // Asegúrate de que coincide con el nombre en la tabla
+    @Column(name = "cod_proveedor") // Asegúrate de que coincide con el nombre en la tabla
     private Integer codProveedor;
 
 
@@ -26,6 +26,7 @@ public class Proveedores {
     private String direccionProveedor;
 
     // Getters y Setters
+
     public Integer getCodProveedor() {
         return codProveedor;
     }
@@ -65,5 +66,4 @@ public class Proveedores {
     public void setDireccionProveedor(String direccionProveedor) {
         this.direccionProveedor = direccionProveedor;
     }
-
 }

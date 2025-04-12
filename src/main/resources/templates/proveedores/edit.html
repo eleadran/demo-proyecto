@@ -2,41 +2,43 @@
 <html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
 <head th:insert="~{layout::head}">
   <meta charset="UTF-8">
-  <title>Title</title>
+  <title>Editar Proveedor</title>
 </head>
 <body>
 <nav th:insert="~{layout::menu}"></nav>
 <br />
 <div class="card">
   <div class="card-header text-bg-secondary">
-    Mantenimiento de proveedores
+    Mantenimiento de Proveedores
   </div>
   <div class="card-body">
-    <h5 class="card-title">Actualizar proveedores</h5>
+    <h5 class="card-title">Editar Proveedor</h5>
     <hr />
     <form th:action="@{/proveedores/save}" method="post" th:object="${proveedor}">
-      <input type="hidden" th:field="*{cod_proveedor}" >
+      <!-- Campo oculto para el ID del proveedor -->
+      <input type="hidden" th:field="*{codProveedor}">
       <div class="form-floating mb-3">
-        <input type="text" class="form-control" id="txtnombre_proveedor" th:field="*{nombre_proveedor}"
-               placeholder="name@example.com">
-        <label for="txtnombre_proveedor">Nombre de proveedor</label>
+        <input type="text" class="form-control" id="txtnombre_proveedor" th:field="*{nombreProveedor}"
+               placeholder="Ejemplo: Proveedor Central" required>
+        <label for="txtnombre_proveedor">Nombre del Proveedor</label>
       </div>
       <div class="form-floating mb-3">
-        <input type="text" class="form-control" id="txttelefono_proveedor" th:field="*{telefono_proveedor}"
-               placeholder="name@example.com">
-        <label for="txttelefono_proveedor">telefono del proveedor</label>
+        <input type="text" class="form-control" id="txttelefono_proveedor" th:field="*{telefonoProveedor}"
+               placeholder="Ejemplo: 123456789" required>
+        <label for="txttelefono_proveedor">Teléfono del Proveedor</label>
       </div>
       <div class="form-floating mb-3">
-        <input type="number" class="form-control" id="txtstock_proveedor" th:field="*{stock_proveedor}"
-               placeholder="name@example.com">
-        <label for="txtstock_proveedor">stock proveedor</label>
+        <input type="number" class="form-control" id="txtstock_proveedor" th:field="*{stockProveedor}"
+               placeholder="Ejemplo: 100" required>
+        <label for="txtstock_proveedor">Stock del Proveedor</label>
       </div>
       <div class="form-floating mb-3">
-        <input type="text" class="form-control" id="txtdireccion_proveedor" th:field="*{direccion_proveedor}"
-               placeholder="name@example.com">
-        <label for="txtdireccion_proveedor">direccion proveedor</label>
+        <input type="text" class="form-control" id="txtdireccion_proveedor" th:field="*{direccionProveedor}"
+               placeholder="Ejemplo: Av. Principal 123" required>
+        <label for="txtdireccion_proveedor">Dirección del Proveedor</label>
       </div>
       <button type="submit" class="btn btn-primary">Actualizar</button>
+      <a th:href="@{/proveedores}" class="btn btn-secondary">Cancelar</a>
     </form>
   </div>
 </div>
