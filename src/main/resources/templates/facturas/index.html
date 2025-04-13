@@ -32,7 +32,7 @@
                 <th>Importe</th>
                 <th>Cliente</th>
                 <th>Vendedor</th>
-                <th>Vehículo</th>
+                <th>Diseño Vehículo</th> <!-- Actualizado -->
                 <th>Concesionaria</th>
                 <th>Acciones</th>
             </tr>
@@ -44,7 +44,7 @@
                 <td th:text="${factura.importeVenta}"></td>
                 <td th:text="${factura.cliente.nombre_cliente}"></td>
                 <td th:text="${factura.vendedor.nombre_vendedor}"></td>
-                <td th:text="${factura.vehiculo.modelo.disenoModelo}"></td>
+                <td th:text="${factura.vehiculo.disenoModelo}"></td> <!-- Corregido -->
                 <td th:text="${factura.concesionaria.nombreConcesionaria}"></td>
                 <td class="text-center">
                     <a th:href="@{/facturas/edit/{id}(id=${factura.id})}" class="btn btn-sm btn-outline-primary me-1">

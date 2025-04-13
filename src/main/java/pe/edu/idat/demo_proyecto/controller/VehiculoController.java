@@ -7,11 +7,9 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import pe.edu.idat.demo_proyecto.model.Combustions;
 import pe.edu.idat.demo_proyecto.model.Marcas;
-import pe.edu.idat.demo_proyecto.model.Modelo;
 import pe.edu.idat.demo_proyecto.model.Vehiculo;
 import pe.edu.idat.demo_proyecto.service.CombustionsService;
 import pe.edu.idat.demo_proyecto.service.MarcasService;
-import pe.edu.idat.demo_proyecto.service.ModeloService;
 import pe.edu.idat.demo_proyecto.service.VehiculosService;
 
 import java.util.List;
@@ -24,14 +22,12 @@ public class VehiculoController {
     private final VehiculosService vehiculoService;
     private final CombustionsService combustionService;
     private final MarcasService marcaService;
-    private final ModeloService modeloService;
 
     public VehiculoController(VehiculosService vehiculoService, CombustionsService combustionService,
-                              MarcasService marcaService, ModeloService modeloService) {
+                              MarcasService marcaService) {
         this.vehiculoService = vehiculoService;
         this.combustionService = combustionService;
         this.marcaService = marcaService;
-        this.modeloService = modeloService;
     }
 
     @GetMapping
@@ -63,9 +59,6 @@ public class VehiculoController {
 
     @PostMapping("/save")
     public String save(@ModelAttribute("vehiculo") Vehiculo vehiculo) {
-        if (vehiculo.getMarca() == null || vehiculo.getModelo() == null || vehiculo.getCombustion() == null) {
-            throw new IllegalArgumentException("La marca, modelo y tipo de combustión son obligatorios.");
-        }
         logger.info("Guardando vehículo con información: " + vehiculo);
         vehiculoService.guardarVehiculo(vehiculo);
         return "redirect:/vehiculos";
@@ -80,28 +73,10 @@ public class VehiculoController {
     }
 
     private void cargarListasParaFormulario(Model model) {
-        // Carga de Combustiones
         List<Combustions> combustiones = combustionService.obtenerCombustions();
-        if (combustiones == null || combustiones.isEmpty()) {
-            logger.warn("La lista de combustiones está vacía o es nula.");
-        }
         model.addAttribute("combustiones", combustiones);
 
-        // Carga de Marcas
         List<Marcas> marcas = marcaService.obtenerMarcas();
-        if (marcas == null || marcas.isEmpty()) {
-            logger.warn("La lista de marcas está vacía o es nula.");
-        }
         model.addAttribute("marcas", marcas);
-
-        // Carga de Modelos
-        List<Modelo> modelos = modeloService.obtenerModelos();
-        if (modelos == null || modelos.isEmpty()) {
-            logger.warn("La lista de modelos está vacía o es nula.");
-        } else {
-            logger.info("Lista de modelos cargada correctamente: " + modelos);
-        }
-        model.addAttribute("modelos", modelos);
-
     }
 }

@@ -6,7 +6,7 @@ import org.springframework.stereotype.Service;
 import pe.edu.idat.demo_proyecto.model.Vehiculo;
 import pe.edu.idat.demo_proyecto.repository.VehiculosRepository;
 
-import java.sql.Date;
+import java.math.BigDecimal;
 import java.util.List;
 
 @Service
@@ -24,7 +24,6 @@ public class VehiculosService {
         return vehiculoRepository.findAll();
     }
 
-
     public Vehiculo obtenerVehiculoPorId(int id) {
         logger.info("Buscando vehículo con ID " + id);
         return vehiculoRepository.findById(id)
@@ -36,7 +35,6 @@ public class VehiculosService {
         vehiculoRepository.save(vehiculo);
     }
 
-
     public void eliminarVehiculo(int id) {
         if (!vehiculoRepository.existsById(id)) {
             throw new RuntimeException("El vehículo con ID " + id + " no existe.");
@@ -45,8 +43,9 @@ public class VehiculosService {
         vehiculoRepository.deleteById(id);
     }
 
-    public void actualizarVehiculoParcial(String color, Date anio, Integer codCombus, Integer codMarca, Integer codModelo, Integer id) {
+    public void actualizarVehiculoParcial(String color, Integer anio, Integer codCombus, Integer codMarca,
+                                          String disenoModelo, BigDecimal precio, Integer id) {
         logger.info("Actualizando parcialmente vehículo con ID " + id);
-        vehiculoRepository.actualizarVehiculoParcial(color, anio, codCombus, codMarca, codModelo, id);
+        vehiculoRepository.actualizarVehiculoParcial(color, anio, codCombus, codMarca, disenoModelo, precio, id);
     }
 }

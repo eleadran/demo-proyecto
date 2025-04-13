@@ -32,7 +32,8 @@
                 <th>Año</th>
                 <th>Combustión</th>
                 <th>Marca</th>
-                <th>Modelo</th>
+                <th>Diseño</th>
+                <th>Precio</th>
                 <th>Acciones</th>
             </tr>
             </thead>
@@ -43,7 +44,8 @@
                 <td th:text="${vehiculo.anio}"></td>
                 <td th:text="${vehiculo.combustion.tipoCombustion}"></td>
                 <td th:text="${vehiculo.marca.nombreMarca}"></td>
-                <td th:text="${vehiculo.modelo.disenoModelo}"></td>
+                <td th:text="${vehiculo.disenoModelo}"></td>
+                <td th:text="${vehiculo.precio}"></td>
                 <td class="text-center">
                     <a th:href="@{/vehiculos/edit/{id}(id=${vehiculo.id})}" class="btn btn-sm btn-outline-primary me-1">
                         <i class="bi bi-pencil-fill"></i>

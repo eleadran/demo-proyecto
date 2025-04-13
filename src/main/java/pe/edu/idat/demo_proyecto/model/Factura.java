@@ -1,9 +1,7 @@
 package pe.edu.idat.demo_proyecto.model;
 
 import jakarta.persistence.*;
-
 import java.time.LocalDate;
-
 
 @Entity
 @Table(name = "factura")
@@ -18,7 +16,7 @@ public class Factura {
     private LocalDate fechaFactura;
 
     @Column(name = "importe_venta", nullable = false)
-    private Double importeVenta;  // Ajustado a Double
+    private Double importeVenta;
 
     @ManyToOne
     @JoinColumn(name = "cod_cliente", nullable = false)
@@ -30,7 +28,7 @@ public class Factura {
 
     @ManyToOne
     @JoinColumn(name = "cod_vehiculo", nullable = false)
-    private Vehiculo vehiculo;
+    private Vehiculo vehiculo; // Vehículo ahora tiene `disenoModelo` y `precio`
 
     @ManyToOne
     @JoinColumn(name = "cod_concesionaria", nullable = false)

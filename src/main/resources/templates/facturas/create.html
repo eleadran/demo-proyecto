@@ -54,7 +54,7 @@
                 <select class="form-select" id="txtvehiculo" th:field="*{vehiculo}" required>
                     <option value="" disabled selected>Seleccione un vehículo</option>
                     <option th:each="vehiculo : ${vehiculos}" th:value="${vehiculo.id}"
-                            th:text="${vehiculo.modelo.disenoModelo}"></option>
+                            th:text="${vehiculo.disenoModelo}"></option> <!-- Corregido -->
                 </select>
                 <label for="txtvehiculo">Vehículo</label>
             </div>

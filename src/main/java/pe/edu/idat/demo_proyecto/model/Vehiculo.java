@@ -1,7 +1,7 @@
 package pe.edu.idat.demo_proyecto.model;
 
 import jakarta.persistence.*;
-import java.sql.Date;
+import java.math.BigDecimal;
 
 @Entity
 @Table(name = "vehiculo")
@@ -15,8 +15,14 @@ public class Vehiculo {
     @Column(name = "color_vehiculo", nullable = false)
     private String color;
 
-    @Column(name = "año_vehiculo", nullable = false)
-    private Date anio;
+    @Column(name = "anio_vehiculo", nullable = false)
+    private Integer anio; // Cambiado de Date a Integer
+
+    @Column(name = "diseno_modelo") // Migrado desde modelo
+    private String disenoModelo;
+
+    @Column(name = "precio") // Migrado desde modelo
+    private BigDecimal precio;
 
     @ManyToOne
     @JoinColumn(name = "cod_combus", nullable = false)
@@ -26,13 +32,7 @@ public class Vehiculo {
     @JoinColumn(name = "cod_marca", nullable = false)
     private Marcas marca;
 
-    @ManyToOne
-    @JoinColumn(name = "cod_modelo", nullable = false)
-    private Modelo modelo;
-
-
     // Getters y Setters
-
 
     public Integer getId() {
         return id;
@@ -50,12 +50,28 @@ public class Vehiculo {
         this.color = color;
     }
 
-    public Date getAnio() {
+    public Integer getAnio() {
         return anio;
     }
 
-    public void setAnio(Date anio) {
+    public void setAnio(Integer anio) {
         this.anio = anio;
+    }
+
+    public String getDisenoModelo() {
+        return disenoModelo;
+    }
+
+    public void setDisenoModelo(String disenoModelo) {
+        this.disenoModelo = disenoModelo;
+    }
+
+    public BigDecimal getPrecio() {
+        return precio;
+    }
+
+    public void setPrecio(BigDecimal precio) {
+        this.precio = precio;
     }
 
     public Combustions getCombustion() {
@@ -74,17 +90,10 @@ public class Vehiculo {
         this.marca = marca;
     }
 
-    public Modelo getModelo() {
-        return modelo;
-    }
-
-    public void setModelo(Modelo modelo) {
-        this.modelo = modelo;
-    }
-
     @Override
     public String toString() {
         return "Vehiculo{id=" + id + ", color='" + color + "', anio=" + anio +
-                ", combustion=" + combustion + ", marca=" + marca + ", modelo=" + modelo + "}";
+                ", disenoModelo='" + disenoModelo + "', precio=" + precio +
+                ", combustion=" + combustion + ", marca=" + marca + "}";
     }
 }

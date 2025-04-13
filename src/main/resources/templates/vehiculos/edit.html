@@ -19,44 +19,59 @@
             <!-- Campo oculto para el ID del vehículo -->
             <input type="hidden" th:field="*{id}" />
 
+            <!-- Campo para Color -->
             <div class="form-floating mb-3">
                 <input type="text" class="form-control" id="txtcolorVehiculo" th:field="*{color}"
                        placeholder="Ejemplo: Rojo" required>
                 <label for="txtcolorVehiculo">Color del Vehículo</label>
             </div>
 
+            <!-- Campo para Año -->
             <div class="form-floating mb-3">
-                <input type="date" class="form-control" id="txtanioVehiculo" th:field="*{anio}" required>
+                <input type="number" class="form-control" id="txtanioVehiculo" th:field="*{anio}"
+                       placeholder="Ejemplo: 2023" required min="1900" max="2100">
                 <label for="txtanioVehiculo">Año del Vehículo</label>
             </div>
 
+            <!-- Campo para Diseño -->
+            <div class="form-floating mb-3">
+                <input type="text" class="form-control" id="txtdisenoVehiculo" th:field="*{disenoModelo}"
+                       placeholder="Ejemplo: Sedán" required>
+                <label for="txtdisenoVehiculo">Diseño del Vehículo</label>
+            </div>
+
+            <!-- Campo para Precio -->
+            <div class="form-floating mb-3">
+                <input type="number" class="form-control" id="txtprecioVehiculo" th:field="*{precio}"
+                       placeholder="Ejemplo: 25000.00" required step="0.01">
+                <label for="txtprecioVehiculo">Precio del Vehículo</label>
+            </div>
+
+            <!-- Selección de Tipo de Combustión -->
             <div class="form-floating mb-3">
                 <select class="form-select" id="txtcombustion" th:field="*{combustion}" required>
-                    <option value="">Seleccione el tipo de combustión</option>
+                    <option value="" disabled>Seleccione el tipo de combustión</option>
                     <option th:each="comb : ${combustiones}" th:value="${comb.id}" th:text="${comb.tipoCombustion}"></option>
                 </select>
                 <label for="txtcombustion">Tipo de Combustión</label>
             </div>
 
+            <!-- Selección de Marca -->
             <div class="form-floating mb-3">
                 <select class="form-select" id="txtmarca" th:field="*{marca}" required>
-                    <option value="">Seleccione una marca</option>
+                    <option value="" disabled>Seleccione una marca</option>
                     <option th:each="marc : ${marcas}" th:value="${marc.id}" th:text="${marc.nombreMarca}"></option>
                 </select>
                 <label for="txtmarca">Marca</label>
             </div>
 
-            <div class="form-floating mb-3">
-                <select class="form-select" id="txtmodelo" th:field="*{modelo}" required>
-                    <option value="">Seleccione un modelo</option>
-                    <option th:each="mod : ${modelos}" th:value="${mod.id}" th:text="${mod.disenoModelo}"></option>
-                </select>
-                <label for="txtmodelo">Modelo</label>
-            </div>
-
+            <!-- Botones de acción -->
             <button type="submit" class="btn btn-primary shadow-sm">
                 <i class="bi bi-pencil-fill me-1"></i> Actualizar Vehículo
             </button>
+            <a href="/vehiculos" class="btn btn-secondary shadow-sm">
+                <i class="bi bi-arrow-left me-1"></i> Cancelar
+            </a>
         </form>
     </div>
 </div>
