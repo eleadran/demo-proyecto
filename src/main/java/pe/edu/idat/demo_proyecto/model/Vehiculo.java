@@ -1,58 +1,61 @@
 package pe.edu.idat.demo_proyecto.model;
 
 import jakarta.persistence.*;
-
 import java.sql.Date;
 
 @Entity
 @Table(name = "vehiculo")
 public class Vehiculo {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "cod_vehiculo")
-    private Integer codVehiculo;
+    private Integer id;
 
-    @Column(name = "color_vehiculo")
-    private String colorVehiculo;
+    @Column(name = "color_vehiculo", nullable = false)
+    private String color;
 
-    @Column(name = "año_vehiculo")
-    private Date añoVehiculo;
+    @Column(name = "año_vehiculo", nullable = false)
+    private Date anio;
 
     @ManyToOne
-    @JoinColumn(name = "cod_combus", nullable = false) // Relación obligatoria
+    @JoinColumn(name = "cod_combus", nullable = false)
     private Combustions combustion;
 
     @ManyToOne
-    @JoinColumn(name = "cod_marca", nullable = false) // Relación obligatoria
+    @JoinColumn(name = "cod_marca", nullable = false)
     private Marcas marca;
 
     @ManyToOne
-    @JoinColumn(name = "cod_modelo", nullable = false) // Relación obligatoria
-    private Modelos modelo;
+    @JoinColumn(name = "cod_modelo", nullable = false)
+    private Modelo modelo;
+
 
     // Getters y Setters
-    public Integer getCodVehiculo() {
-        return codVehiculo;
+
+
+    public Integer getId() {
+        return id;
     }
 
-    public void setCodVehiculo(Integer codVehiculo) {
-        this.codVehiculo = codVehiculo;
+    public void setId(Integer id) {
+        this.id = id;
     }
 
-    public String getColorVehiculo() {
-        return colorVehiculo;
+    public String getColor() {
+        return color;
     }
 
-    public void setColorVehiculo(String colorVehiculo) {
-        this.colorVehiculo = colorVehiculo;
+    public void setColor(String color) {
+        this.color = color;
     }
 
-    public Date getAñoVehiculo() {
-        return añoVehiculo;
+    public Date getAnio() {
+        return anio;
     }
 
-    public void setAñoVehiculo(Date añoVehiculo) {
-        this.añoVehiculo = añoVehiculo;
+    public void setAnio(Date anio) {
+        this.anio = anio;
     }
 
     public Combustions getCombustion() {
@@ -71,11 +74,17 @@ public class Vehiculo {
         this.marca = marca;
     }
 
-    public Modelos getModelo() {
+    public Modelo getModelo() {
         return modelo;
     }
 
-    public void setModelo(Modelos modelo) {
+    public void setModelo(Modelo modelo) {
         this.modelo = modelo;
+    }
+
+    @Override
+    public String toString() {
+        return "Vehiculo{id=" + id + ", color='" + color + "', anio=" + anio +
+                ", combustion=" + combustion + ", marca=" + marca + ", modelo=" + modelo + "}";
     }
 }

@@ -4,16 +4,21 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 import pe.edu.idat.demo_proyecto.model.Marcas;
-public interface MarcasRepository  extends JpaRepository<Marcas, Integer> {
+
+public interface MarcasRepository extends JpaRepository<Marcas, Integer> {
 
     @Query(value = """
-            UPDATE products SET nombre_marca= :nombre_marca,
-            stock_marca =:stock_marca
-            WHERE cod_marca = :cod_marca
+            UPDATE marca SET nombre_marca = :nombreMarca,
+            stock_marca = :stock
+            WHERE cod_marca = :id
             """, nativeQuery = true)
-    void actualizarProductoParcial(
-            @Param("nombre_marca") String nombre_marca,
-            @Param("stock_marca") Integer stock_marca,
-            @Param("cod_marca") Integer cod_marca);
+    void actualizarMarcaParcial(
+            @Param("nombreMarca") String nombreMarca,
+            @Param("stock") Integer stock,
+            @Param("id") Integer id);
 
+    @Query(value = """
+            SELECT COUNT(*) FROM marca WHERE cod_marca = :id
+            """, nativeQuery = true)
+    boolean existeMarca(@Param("id") Integer id);
 }

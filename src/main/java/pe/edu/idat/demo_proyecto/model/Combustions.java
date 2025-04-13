@@ -1,34 +1,33 @@
 package pe.edu.idat.demo_proyecto.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
 import jakarta.persistence.*;
 
 @Entity
-@Table (name = "combustion")
-public class Combustions {
+@Table(name = "combustion")
+public class Combustions { // Nombre ajustado a singular
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-   private Integer cod_combus;
+    @Column(name = "cod_combus")
+    private Integer id; // Nombre simplificado
 
     @Column(name = "tipoCombu_combus")
-    public String tipoCombu_combus;
+    private String tipoCombustion; // Nombre más claro
 
-    public String getTipoCombu_combus() {
-        return tipoCombu_combus;
+    // Getters y Setters
+    public Integer getId() {
+        return id;
     }
 
-    public void setTipoCombu_combus(String tipoCombu_combus) {
-        this.tipoCombu_combus = tipoCombu_combus;
+    public void setId(Integer id) {
+        this.id = id;
     }
 
-    public Integer getCod_combus() {
-        return cod_combus;
+    public String getTipoCombustion() {
+        return tipoCombustion;
     }
 
-    public void setCod_combus(Integer cod_combus) {
-        this.cod_combus = cod_combus;
+    public void setTipoCombustion(String tipoCombustion) {
+        this.tipoCombustion = tipoCombustion;
     }
-
 }

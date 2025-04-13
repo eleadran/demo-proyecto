@@ -1,42 +1,38 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
 <head th:insert="~{layout::head}">
     <meta charset="UTF-8">
-    <title>Clientes</title>
+    <title>Lista de Marcas</title>
 </head>
 <body>
 <nav th:insert="~{layout::menu}"></nav>
 <div class="container mt-4">
     <div class="d-flex justify-content-between mb-3">
         <h2>Lista de Marcas</h2>
-        <a class="btn btn-success" th:href="@{/marcas/create}">Nuevo Cliente</a>
+        <a class="btn btn-success" th:href="@{/marcas/create}">Nueva Marca</a>
     </div>
 
     <table class="table table-bordered table-hover">
-                <thead class="table-secondary">
-                <tr>
-                    <th scope="col">ID</th>
-                    <th scope="col">Nombre</th>
-                    <th scope="col">Stock</th>
-                    <th scope="col">Acciones</th>
-                </tr>
-                </thead>
-                <tbody>
-                <tr th:each="MARCA : ${marcas}">
-                    <td th:text="${MARCA.cod_marca}"></td>
-                    <td th:text="${MARCA.nombre_marca}"></td>
-                    <td th:text="${MARCA.stock_marca}"></td>
-                    <td>
-
-                        <a th:href="@{/marcas/edit/{id}(id=${MARCA.cod_marca})}" class="btn btn-primary btn-sm">Editar</a>
-                        <a th:href="@{/marcas/delete/{id}(id=${MARCA.cod_marca})}" class="btn btn-danger btn-sm">Eliminar</a>
-                    </td>
-                </tr>
-                </tbody>
-            </table>
-
-        </div>
-    </div>
-
+        <thead class="table-secondary">
+        <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Nombre de la Marca</th>
+            <th scope="col">Stock</th>
+            <th scope="col">Acciones</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="marca : ${marcas}">
+            <td th:text="${marca.id}"></td>
+            <td th:text="${marca.nombreMarca}"></td>
+            <td th:text="${marca.stock}"></td>
+            <td>
+                <a th:href="@{/marcas/edit/{id}(id=${marca.id})}" class="btn btn-primary btn-sm">Editar</a>
+                <a th:href="@{/marcas/delete/{id}(id=${marca.id})}" class="btn btn-danger btn-sm">Eliminar</a>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>
 </body>
 </html>

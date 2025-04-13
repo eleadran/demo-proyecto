@@ -1,39 +1,49 @@
 package pe.edu.idat.demo_proyecto.model;
+
 import jakarta.persistence.*;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
 
 @Entity
-@Table (name = "marca")
-public class Marcas {
+@Table(name = "marca")
+public class Marcas { // Ajustado a singular
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private  Integer cod_marca;
-    private String nombre_marca;
-    private Integer stock_marca;
+    @Column(name = "cod_marca")
+    private Integer id;
 
-    public Integer getCod_marca() {
-        return cod_marca;
+    @Column(name = "nombre_marca", nullable = false)
+    private String nombreMarca;
+
+    @Column(name = "stock_marca")
+    private Integer stock;
+
+    // Getters y Setters
+    public Integer getId() {
+        return id;
     }
 
-    public void setCod_marca(Integer cod_marca) {
-        this.cod_marca = cod_marca;
+    public void setId(Integer id) {
+        this.id = id;
     }
 
-    public String getNombre_marca() {
-        return nombre_marca;
+    public String getNombreMarca() {
+        return nombreMarca;
     }
 
-    public void setNombre_marca(String nombre_marca) {
-        this.nombre_marca = nombre_marca;
+    public void setNombreMarca(String nombreMarca) {
+        this.nombreMarca = nombreMarca;
     }
 
-    public Integer getStock_marca() {
-        return stock_marca;
+    public Integer getStock() {
+        return stock;
     }
 
-    public void setStock_marca(Integer stock_marca) {
-        this.stock_marca = stock_marca;
+    public void setStock(Integer stock) {
+        this.stock = stock;
+    }
+
+    @Override
+    public String toString() {
+        return "Marca{id=" + id + ", nombreMarca='" + nombreMarca + "', stock=" + stock + "}";
     }
 }

@@ -1,10 +1,64 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head th:insert="~{layout::head}">
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Actualizar Vehículo</title>
 </head>
 <body>
+<nav th:insert="~{layout::menu}"></nav>
+<br />
+<div class="card">
+    <div class="card-header text-bg-secondary">
+        Mantenimiento de Vehículos
+    </div>
+    <div class="card-body">
+        <h5 class="card-title">Actualizar Vehículo</h5>
+        <hr />
+        <form th:action="@{/vehiculos/save}" method="post" th:object="${vehiculo}">
 
+            <!-- Campo oculto para el ID del vehículo -->
+            <input type="hidden" th:field="*{id}" />
+
+            <div class="form-floating mb-3">
+                <input type="text" class="form-control" id="txtcolorVehiculo" th:field="*{color}"
+                       placeholder="Ejemplo: Rojo" required>
+                <label for="txtcolorVehiculo">Color del Vehículo</label>
+            </div>
+
+            <div class="form-floating mb-3">
+                <input type="date" class="form-control" id="txtanioVehiculo" th:field="*{anio}" required>
+                <label for="txtanioVehiculo">Año del Vehículo</label>
+            </div>
+
+            <div class="form-floating mb-3">
+                <select class="form-select" id="txtcombustion" th:field="*{combustion}" required>
+                    <option value="">Seleccione el tipo de combustión</option>
+                    <option th:each="comb : ${combustiones}" th:value="${comb.id}" th:text="${comb.tipoCombustion}"></option>
+                </select>
+                <label for="txtcombustion">Tipo de Combustión</label>
+            </div>
+
+            <div class="form-floating mb-3">
+                <select class="form-select" id="txtmarca" th:field="*{marca}" required>
+                    <option value="">Seleccione una marca</option>
+                    <option th:each="marc : ${marcas}" th:value="${marc.id}" th:text="${marc.nombreMarca}"></option>
+                </select>
+                <label for="txtmarca">Marca</label>
+            </div>
+
+            <div class="form-floating mb-3">
+                <select class="form-select" id="txtmodelo" th:field="*{modelo}" required>
+                    <option value="">Seleccione un modelo</option>
+                    <option th:each="mod : ${modelos}" th:value="${mod.id}" th:text="${mod.disenoModelo}"></option>
+                </select>
+                <label for="txtmodelo">Modelo</label>
+            </div>
+
+            <button type="submit" class="btn btn-primary shadow-sm">
+                <i class="bi bi-pencil-fill me-1"></i> Actualizar Vehículo
+            </button>
+        </form>
+    </div>
+</div>
 </body>
 </html>

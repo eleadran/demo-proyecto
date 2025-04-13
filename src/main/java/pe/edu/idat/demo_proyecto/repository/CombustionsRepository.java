@@ -8,10 +8,15 @@ import pe.edu.idat.demo_proyecto.model.Combustions;
 public interface CombustionsRepository extends JpaRepository<Combustions, Integer> {
 
     @Query(value = """
-            UPDATE combustion SET tipoCombu_combus =:tipoCombu_combus
-            WHERE cod_combus = :cod_combus
+            UPDATE combustion SET tipoCombu_combus = :tipoCombustion
+            WHERE cod_combus = :id
             """, nativeQuery = true)
-    void actualizarProductoParcial(
-            @Param("tipoCombu_combus") String tipoCombu_combus,
-            @Param("cod_combus") Integer cod_combus);
+    void actualizarTipoCombustion(
+            @Param("tipoCombustion") String tipoCombustion,
+            @Param("id") Integer id);
+
+    @Query(value = """
+            SELECT COUNT(*) FROM combustion WHERE cod_combus = :id
+            """, nativeQuery = true)
+    boolean existeCombustion(@Param("id") Integer id);
 }

@@ -1,8 +1,8 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
 <head th:insert="~{layout::head}">
   <meta charset="UTF-8">
-  <title>Title</title>
+  <title>Editar Marca de Vehículo</title>
 </head>
 <body>
 <nav th:insert="~{layout::menu}"></nav>
@@ -12,21 +12,24 @@
     Mantenimiento de Marca
   </div>
   <div class="card-body">
-    <h5 class="card-title">Actualizar MARCAS</h5>
+    <h5 class="card-title">Actualizar Marca</h5>
     <hr />
     <form th:action="@{/marcas/save}" method="post" th:object="${marca}">
-      <input type="hidden" th:field="*{cod_marca}" >
+      <input type="hidden" th:field="*{id}">
+
       <div class="form-floating mb-3">
-        <input type="text" class="form-control" id="txtnombre_marca" th:field="*{nombre_marca}"
-               placeholder="name@example.com">
-        <label for="txtnombre_marca">nombre de la marca del vehiculo</label>
+        <input type="text" class="form-control" id="txtNombreMarca" th:field="*{nombreMarca}"
+               placeholder="Ejemplo: Toyota, Honda" required>
+        <label for="txtNombreMarca">Nombre de la Marca</label>
       </div>
+
       <div class="form-floating mb-3">
-        <input type="text" class="form-control" id="txtstock_marca" th:field="*{stock_marca}"
-               placeholder="name@example.com">
-        <label for="txtstock_marca">Stock del vehiculo</label>
+        <input type="number" class="form-control" id="txtStock" th:field="*{stock}"
+               placeholder="Cantidad en stock" required>
+        <label for="txtStock">Stock Disponible</label>
       </div>
-      <button type="submit" class="btn btn-primary">Actualizar</button>
+
+      <button type="submit" class="btn btn-success">Actualizar Marca</button>
     </form>
   </div>
 </div>

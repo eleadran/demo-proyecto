@@ -37,15 +37,18 @@
             </tr>
             </thead>
             <tbody>
-            <tr th:each="VEHICULO : ${vehiculos}">
-                <td th:text="${VEHICULO.codVehiculo}"></td>
-                <td th:text="${VEHICULO.colorVehiculo}"></td>
-                <td th:text="${VEHICULO.añoVehiculo}"></td>
+            <tr th:each="vehiculo : ${vehiculos}">
+                <td th:text="${vehiculo.id}"></td>
+                <td th:text="${vehiculo.color}"></td>
+                <td th:text="${vehiculo.anio}"></td>
+                <td th:text="${vehiculo.combustion.tipoCombustion}"></td>
+                <td th:text="${vehiculo.marca.nombreMarca}"></td>
+                <td th:text="${vehiculo.modelo.disenoModelo}"></td>
                 <td class="text-center">
-                    <a th:href="@{/vehiculos/edit/{id}(id=${VEHICULO.codVehiculo})}" class="btn btn-sm btn-outline-primary me-1">
+                    <a th:href="@{/vehiculos/edit/{id}(id=${vehiculo.id})}" class="btn btn-sm btn-outline-primary me-1">
                         <i class="bi bi-pencil-fill"></i>
                     </a>
-                    <a th:href="@{/vehiculos/delete/{id}(id=${VEHICULO.codVehiculo})}" class="btn btn-sm btn-outline-danger">
+                    <a th:href="@{/vehiculos/delete/{id}(id=${vehiculo.id})}" class="btn btn-sm btn-outline-danger">
                         <i class="bi bi-trash-fill"></i>
                     </a>
                 </td>

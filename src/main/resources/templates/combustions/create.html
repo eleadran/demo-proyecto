@@ -1,28 +1,31 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
 <head th:insert="~{layout::head}">
-    <meta charset="UTF-8">
-    <title>Title</title>
+  <meta charset="UTF-8">
+  <title>Editar Combustible</title>
 </head>
 <body>
-  <nav th:insert="~{layout::menu}"></nav>
-  <br />
-  <div class="card">
-    <div class="card-header text-bg-secondary">
-      Mantenimiento de combustible
-    </div>
-    <div class="card-body">
-      <h5 class="card-title">Registrar combustible</h5>
-      <hr />
-      <form th:action="@{/combustions/save}" method="post" th:object="${combustibles}">
-        <div class="form-floating mb-3">
-          <input type="text" class="form-control" id="txttipoCombu_combus" th:field="*{tipoCombu_combus}"
-                 placeholder="name@example.com">
-          <label for="txttipoCombu_combus">tipos de combustible</label>
-        </div>
-        <button type="submit" class="btn btn-primary">Registrar</button>
-      </form>
-    </div>
+<nav th:insert="~{layout::menu}"></nav>
+<br />
+<div class="card">
+  <div class="card-header text-bg-secondary">
+    Edición de Combustible
   </div>
+  <div class="card-body">
+    <h5 class="card-title">Editar Combustible</h5>
+    <hr />
+    <form th:action="@{/combustions/save}" method="post" th:object="${combustion}">
+      <input type="hidden" th:field="*{id}"> <!-- ID oculto para actualizar correctamente -->
+
+      <div class="form-floating mb-3">
+        <input type="text" class="form-control" id="txttipoCombustion" th:field="*{tipoCombustion}"
+               placeholder="Ejemplo: Gasolina, Diesel" required>
+        <label for="txttipoCombustion">Tipo de Combustible</label>
+      </div>
+
+      <button type="submit" class="btn btn-success">Actualizar</button>
+    </form>
+  </div>
+</div>
 </body>
 </html>
