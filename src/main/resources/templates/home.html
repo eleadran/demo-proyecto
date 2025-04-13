@@ -5,52 +5,197 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Triforce Motors</title>
     <link rel="stylesheet" th:href="@{/css/style.css}">
+    <style>
+        /* Efecto hover para las tarjetas */
+        .card:hover {
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            transform: scale(1.05); /* Aumentar el tamaño ligeramente */
+            transition: all 0.3s ease-in-out; /* Aplicar transiciones suaves */
+        }
+
+        #sliderFullWidth {
+    max-height: 500px; /* Limita la altura total del slider */
+    overflow: hidden; /* Evita que el contenido se salga */
+}
+
+.carousel-inner {
+    height:500px;
+}
+
+.carousel-item img {
+    height: 400px; /* Ajusta la altura de las imágenes */
+    object-fit: cover; /* Mantiene proporciones sin deformaciones */
+}
+
+    </style>
 </head>
 <body>
 
 <!-- Menú de navegación -->
-<nav th:insert="~{layout::menu}"></nav>
+<nav class="navbar navbar-expand-lg bg-black">
+    <div class="container-fluid">
+        <!-- Logo -->
+        <a class="navbar-brand text-white" href="#">
+            TriForce MOTORS
+        </a>
+
+        <!-- Botón de menú para móviles -->
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- Contenido del Menú -->
+        <div class="collapse navbar-collapse" id="navbarContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item me-5">
+                    <a class="nav-link text-white active" aria-current="page" th:href="@{/home}">Home</a>
+                </li>
+                <li class="nav-item me-5">
+                    <a class="nav-link text-white" href="#">Productos</a>
+                </li>
+                <li class="nav-item me-5">
+                    <a class="nav-link text-white" href="#">Tiendas</a>
+                </li>
+                <li class="nav-item me-5">
+                    <a class="nav-link text-white" href="#">Crédito</a>
+                </li>
+                <li class="nav-item me-5">
+                    <a class="nav-link text-white" href="#">Asesores</a>
+                </li>
+            </ul>
+
+            <!-- Imágenes pequeñas a la derecha con enlaces -->
+            <div class="d-flex align-items-center">
+                <a href="/carrito">
+                    <img th:src="@{/imagenes/carrito.jpg}" alt="Carrito" width="30" height="30" class="me-5">
+                </a>
+                <a href="/contactanos">
+                    <img th:src="@{/imagenes/contactanos.jpg}" alt="Contáctanos" width="30" height="30" class="me-5">
+                </a>
+                <a th:href="@{/login}">
+                    <img th:src="@{/imagenes/usuario.jpg}" alt="Usuario" width="30" height="30" class="me-5">
+                </a>
+            </div>
+        </div>
+    </div>
+</nav>
+
+<!-- Menú de navegación -->
 
 <!-- Barra de bienvenida -->
-<div class="barra bg-dark text-white text-center py-2">
+<div class="barra text-white text-center py-2" style="background-color: #3f3f3e; font-size: 0.9rem;">
     <h4>¡Bienvenido a Triforce Motors! Encuentra el auto de tus sueños al mejor precio.</h4>
+</div>
+
+<!-- Autos destacados -->
+<!-- SLIDER -->
+<div id="sliderFullWidth" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-inner">
+        <!-- Imagen 1 -->
+        <div class="carousel-item active">
+            <img th:src="@{/imagenes/toyota.jpg}" class="d-block w-100" alt="Imagen 1">
+        </div>
+        <!-- Imagen 2 -->
+        <div class="carousel-item">
+            <img th:src="@{/imagenes/chevrolet.jpg}" class="d-block w-100" alt="Imagen 2">
+        </div>
+        <!-- Imagen 3 -->
+        <div class="carousel-item">
+            <img th:src="@{/imagenes/mustang.jpg}" class="d-block w-100" alt="Imagen 3">
+        </div>
+    </div>
+    <!-- Controles del Slider -->
+    <button class="carousel-control-prev" type="button" data-bs-target="#sliderFullWidth" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Anterior</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#sliderFullWidth" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Siguiente</span>
+    </button>
 </div>
 
 
 
-<!-- Autos destacados -->
-<aside class="row text-center">
-    <div class="col-md-4 mb-4">
-        <div class="card shadow">
-            <img th:src="@{/imagenes/toyota.jpg}" class="card-img-top" alt="Toyota">
-            <div class="card-body">
-                <h5 class="card-title">Toyota Corolla 2024</h5>
-                <p class="card-text precio fw-bold text-success">$22,000</p>
-            </div>
-        </div>
-    </div>
 
-    <div class="col-md-4 mb-4">
-        <div class="card shadow">
-            <img th:src="@{/imagenes/chevrolet.jpg}" class="card-img-top" alt="Chevrolet">
-            <div class="card-body">
-                <h5 class="card-title">Ford Mustang 2023</h5>
-                <p class="card-text precio fw-bold text-success">$45,000</p>
-            </div>
-        </div>
-    </div>
 
-    <div class="col-md-4 mb-4">
-        <div class="card shadow">
-            <img th:src="@{/imagenes/mustang.jpg}" class="card-img-top" alt="Mustang">
-            <div class="card-body">
-                <h5 class="card-title">Chevrolet Camaro 2023</h5>
-                <p class="card-text precio fw-bold text-success">$50,000</p>
+
+
+<div class="container mt-5">
+    <h2 class="text-center mb-4">Vehículos Disponibles</h2>
+    <div class="row">
+        <!-- Bloque 1 -->
+        <div class="col-md-4 mb-4">
+            <div class="card">
+                <img th:src="@{/imagenes/imagen1.png}" alt="Vehículo 1" class="card-img-top">
+                <div class="card-body text-center">
+                    <h5 class="card-title">Sedán Elegante</h5>
+                    <p class="text-muted">$25,000</p>
+                    <a href="#" class="btn btn-primary">Cotizar</a>
+                </div>
             </div>
         </div>
+        <!-- Bloque 2 -->
+        <div class="col-md-4 mb-4">
+            <div class="card">
+                <img th:src="@{/imagenes/imagen2.png}" alt="Vehículo 2" class="card-img-top">
+                <div class="card-body text-center">
+                    <h5 class="card-title">SUV Deportivo</h5>
+                    <p class="text-muted">$35,000</p>
+                    <a href="#" class="btn btn-primary">Cotizar</a>
+                </div>
+            </div>
+        </div>
+        <!-- Bloque 3 -->
+        <div class="col-md-4 mb-4">
+            <div class="card">
+                <img th:src="@{/imagenes/imagen3.png}" alt="Vehículo 3" class="card-img-top">
+                <div class="card-body text-center">
+                    <h5 class="card-title">Compacto Económico</h5>
+                    <p class="text-muted">$15,000</p>
+                    <a href="#" class="btn btn-primary">Cotizar</a>
+                </div>
+            </div>
+        </div>
+        <!-- Bloque 4 -->
+        <div class="col-md-4 mb-4">
+            <div class="card">
+                <img th:src="@{/imagenes/imagen4.png}" alt="Vehículo 1" class="card-img-top">
+                <div class="card-body text-center">
+                    <h5 class="card-title">Sedán Elegante</h5>
+                    <p class="text-muted">$25,000</p>
+                    <a href="#" class="btn btn-primary">Cotizar</a>
+                </div>
+            </div>
+        </div>
+        <!-- Bloque 2 -->
+        <!-- Bloque 1 -->
+        <div class="col-md-4 mb-4">
+            <div class="card">
+                <img th:src="@{/imagenes/imagen5.png}" alt="Vehículo 1" class="card-img-top">
+                <div class="card-body text-center">
+                    <h5 class="card-title">Sedán Elegante</h5>
+                    <p class="text-muted">$25,000</p>
+                    <a href="#" class="btn btn-primary">Cotizar</a>
+                </div>
+            </div>
+        </div>
+        <!-- Bloque 2 -->
+        <!-- Bloque 1 -->
+        <div class="col-md-4 mb-4">
+            <div class="card">
+                <img th:src="@{/imagenes/imagen6.png}" alt="Vehículo 1" class="card-img-top">
+                <div class="card-body text-center">
+                    <h5 class="card-title">Sedán Elegante</h5>
+                    <p class="text-muted">$25,000</p>
+                    <a href="#" class="btn btn-primary">Cotizar</a>
+                </div>
+            </div>
+        </div>
+        <!-- Bloque 2 -->
     </div>
-</aside>
-</main>
+</div>
+
 
 <!-- Footer -->
 <footer class="bg-dark text-white text-center py-3 mt-5">

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head th:insert="~{layout::head}">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Triforce Motors</title>
+  <link rel="stylesheet" th:href="@{/css/style.css}">
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+
+<!-- Menú de navegación -->
+<nav th:insert="~{layout::menu}"></nav>
+
+<!-- Sección de Tarjetas -->
+<div class="container mt-5">
+  <h2 class="text-center mb-4">Noticias Destacadas</h2>
+  <div class="row">
+    <!-- Tarjeta 1 -->
+    <div class="col-md-4 mb-4">
+      <div class="card">
+        <img th:src="@{/imagenes/tra.jpg}" class="card-img-top" alt="Noticia 1">
+        <div class="card-body">
+          <h5 class="card-title">Covencion Anual de Concesionarias</h5>
+          <p class="card-text">Recientemente, tuvimos un encuentro muy enriquecedor con toda nuestra red de concesionarios a nivel nacional en el marco de nuestra Convención Anual de Concesionarios Toyota 2025, realizada en la ciudad de Paracas. Un evento clave para fortalecer los lazos con nuestros socios estratégicos y compartir nuestra visión para el futuro.​</p>
+          <a href="#" class="btn btn-primary">Leer más</a>
+        </div>
+      </div>
+    </div>
+    <!-- Tarjeta 2 -->
+    <div class="col-md-4 mb-4">
+      <div class="card">
+        <img th:src="@{/imagenes/tra2.jpg}" class="card-img-top" alt="Noticia 2">
+        <div class="card-body">
+          <h5 class="card-title">TOYOTA GAZOO Racing: ellos vestirán el ADN de TGR en el 2025</h5>
+          <p class="card-text">TOYOTA GAZOO Racing completó su 12ª temporada en el Campeonato Mundial de Resistencia (WEC), logrando su sexta victoria consecutiva como campeones de fabricantes. En 2025, el equipo defenderá su título y buscará su sexta victoria en las 24 Horas de Le Mans con dos GR010 HYBRID en la categoría Hypercar, utilizando un tren motriz RACING HYBRID perfeccionado en el WEC.</p>
+          <a href="#" class="btn btn-primary">Leer más</a>
+        </div>
+      </div>
+    </div>
+    <!-- Tarjeta 3 -->
+    <div class="col-md-4 mb-4">
+      <div class="card">
+        <img th:src="@{/imagenes/tra3.jpg}" class="card-img-top" alt="Noticia 3">
+        <div class="card-body">
+          <h5 class="card-title">Dakar 2025: Toyota Gazoo Racing Enciende Motores en la Primera Semana</h5>
+          <p class="card-text">La 1era semana del Dakar 2025 ha estado marcada por una impresionante cantidad de récords de precocidad, destacando las dos victorias de etapa de Seth Quintero, quien, a sus 22 años, sigue consolidándose como una joven promesa. También destacó el sudafricano Saood Variawa, quien, a sus 19 años, logró un impresionante triunfo y parece que permanecerá en lo más alto de las estadísticas por mucho tiempo.</p>
+          <a href="#" class="btn btn-primary">Leer más</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Footer -->
+<footer class="bg-dark text-white text-center py-3 mt-5">
+  <p>&copy; 2025 Triforce Motors - Todos los derechos reservados.</p>
+</footer>
+
+<script th:src="@{/js/logica.js}"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
