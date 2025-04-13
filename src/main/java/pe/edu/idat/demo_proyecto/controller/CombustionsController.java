@@ -1,3 +1,4 @@
+
 package pe.edu.idat.demo_proyecto.controller;
 
 import org.slf4j.Logger;
@@ -34,27 +35,24 @@ public class CombustionsController {
     }
 
     @GetMapping("/edit/{id}")
-    public String edit(Model model, @PathVariable int id) {
-        logger.info("Cargando combustión con ID " + id + " para edición");
-        Combustions combustion = combustionsService.obtenerCombustionsXid(id);
-        if (combustion == null) {
-            throw new RuntimeException("No se encontró la combustión con ID " + id);
-        }
-        model.addAttribute("combustion", combustion);
+    public String edit(@PathVariable int id, Model model) {
+        logger.info("Preparando formulario de edición para ID " + id);
+        Combustions combustion = combustionsService.obtenerPorId(id);
+        model.addAttribute("combustion", combustion); // Usamos "combustion" para alinear con el HTML
         return "combustions/edit";
     }
 
     @PostMapping("/save")
     public String save(@ModelAttribute("combustion") Combustions combustion) {
         logger.info("Guardando combustión: " + combustion);
-        combustionsService.guardarCombustions(combustion);
+        combustionsService.guardarCombustion(combustion);
         return "redirect:/combustions";
     }
 
     @GetMapping("/delete/{id}")
     public String delete(@PathVariable int id) {
         logger.info("Eliminando combustión con ID " + id);
-        combustionsService.eliminarCombustions(id);
+        combustionsService.eliminarCombustion(id);
         return "redirect:/combustions";
     }
 }

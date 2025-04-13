@@ -23,18 +23,18 @@ public class CombustionsService {
         return combustionsRepository.findAll();
     }
 
-    public Combustions obtenerCombustionsXid(int id) {
+    public Combustions obtenerPorId(int id) {
         logger.info("Buscando combustión con ID " + id);
         return combustionsRepository.findById(id)
                 .orElseThrow(() -> new RuntimeException("No se encontró la combustión con ID " + id));
     }
 
-    public void guardarCombustions(Combustions combustion) {
+    public void guardarCombustion(Combustions combustion) {
         logger.info("Guardando combustión: " + combustion);
         combustionsRepository.save(combustion);
     }
 
-    public void eliminarCombustions(int id) {
+    public void eliminarCombustion(int id) {
         if (!combustionsRepository.existsById(id)) {
             throw new RuntimeException("El registro con ID " + id + " no existe.");
         }

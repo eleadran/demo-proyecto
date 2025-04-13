@@ -16,7 +16,8 @@ public interface CombustionsRepository extends JpaRepository<Combustions, Intege
             @Param("id") Integer id);
 
     @Query(value = """
-            SELECT COUNT(*) FROM combustion WHERE cod_combus = :id
+            SELECT CASE WHEN COUNT(*) > 0 THEN true ELSE false END
+            FROM combustion WHERE cod_combus = :id
             """, nativeQuery = true)
     boolean existeCombustion(@Param("id") Integer id);
 }

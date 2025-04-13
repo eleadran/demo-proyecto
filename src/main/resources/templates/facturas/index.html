@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head th:insert="~{layout::head}">
+    <meta charset="UTF-8">
+    <title>Facturas</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <style>
+        .table-hover tbody tr:hover {
+            background-color: #f2f2f2;
+            transition: 0.3s ease-in-out;
+        }
+    </style>
+</head>
+<body>
+<nav th:insert="~{layout::menu}"></nav>
+
+<div class="container mt-5">
+
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <h2 class="text-primary fw-bold"><i class="bi bi-file-earmark-text-fill me-2"></i>Listado de Facturas</h2>
+        <a class="btn btn-success shadow-sm" th:href="@{/facturas/create}">
+            <i class="bi bi-plus-circle-fill me-1"></i> Nueva Factura
+        </a>
+    </div>
+
+    <div class="table-responsive shadow-sm">
+        <table class="table table-bordered table-hover align-middle">
+            <thead class="table-dark text-center">
+            <tr>
+                <th>ID</th>
+                <th>Fecha</th>
+                <th>Importe</th>
+                <th>Cliente</th>
+                <th>Vendedor</th>
+                <th>Vehículo</th>
+                <th>Concesionaria</th>
+                <th>Acciones</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="factura : ${facturas}">
+                <td th:text="${factura.id}"></td>
+                <td th:text="${factura.fechaFactura}"></td>
+                <td th:text="${factura.importeVenta}"></td>
+                <td th:text="${factura.cliente.nombre_cliente}"></td>
+                <td th:text="${factura.vendedor.nombre_vendedor}"></td>
+                <td th:text="${factura.vehiculo.modelo.disenoModelo}"></td>
+                <td th:text="${factura.concesionaria.nombreConcesionaria}"></td>
+                <td class="text-center">
+                    <a th:href="@{/facturas/edit/{id}(id=${factura.id})}" class="btn btn-sm btn-outline-primary me-1">
+                        <i class="bi bi-pencil-fill"></i>
+                    </a>
+                    <a th:href="@{/facturas/delete/{id}(id=${factura.id})}" class="btn btn-sm btn-outline-danger">
+                        <i class="bi bi-trash-fill"></i>
+                    </a>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+</body>
+</html>

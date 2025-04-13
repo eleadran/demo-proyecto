@@ -14,13 +14,18 @@
   <div class="card-body">
     <h5 class="card-title">Actualizar combustible</h5>
     <hr />
-    <form th:action="@{/combustions/save}" method="post" th:object="${combustibles}">
-      <input type="hidden" th:field="*{tipoCombu_combus}" >
+    <form th:action="@{/combustions/save}" method="post" th:object="${combustion}">
+      <!-- Campo oculto para el ID -->
+      <input type="hidden" th:field="*{id}" />
+
+      <!-- Campo para el Tipo de Combustión -->
       <div class="form-floating mb-3">
-        <input type="text" class="form-control" id="txttipoCombu_combus" th:field="*{tipoCombu_combus}"
-               placeholder="name@example.com">
-        <label for="txttipoCombu_combus">tipo de combustible</label>
+        <input type="text" class="form-control" id="txttipoCombu_combus" th:field="*{tipoCombustion}"
+               placeholder="Ejemplo: Gasolina" required>
+        <label for="txttipoCombu_combus">Tipo de Combustible</label>
       </div>
+
+      <!-- Botón para Actualizar -->
       <button type="submit" class="btn btn-primary">Actualizar</button>
     </form>
   </div>

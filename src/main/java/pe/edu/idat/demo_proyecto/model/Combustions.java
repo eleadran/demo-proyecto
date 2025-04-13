@@ -4,15 +4,15 @@ import jakarta.persistence.*;
 
 @Entity
 @Table(name = "combustion")
-public class Combustions { // Nombre ajustado a singular
+public class Combustions {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "cod_combus")
-    private Integer id; // Nombre simplificado
+    @Column(name = "cod_combus") // Mapeo para la columna ID
+    private Integer id;
 
-    @Column(name = "tipoCombu_combus")
-    private String tipoCombustion; // Nombre más claro
+    @Column(name = "tipoCombu_combus") // Mapeo para la columna del tipo de combustión
+    private String tipoCombustion;
 
     // Getters y Setters
     public Integer getId() {

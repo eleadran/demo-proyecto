@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head th:insert="~{layout::head}">
+    <meta charset="UTF-8">
+    <title>Registrar Factura</title>
+</head>
+<body>
+<nav th:insert="~{layout::menu}"></nav>
+<br />
+<div class="card">
+    <div class="card-header text-bg-secondary">
+        Mantenimiento de Facturas
+    </div>
+    <div class="card-body">
+        <h5 class="card-title">Registrar Nueva Factura</h5>
+        <hr />
+        <form th:action="@{/facturas/save}" method="post" th:object="${factura}">
+
+            <!-- Campo para Fecha de Factura -->
+            <div class="form-floating mb-3">
+                <input type="date" class="form-control" id="txtfechaFactura" th:field="*{fechaFactura}" required>
+                <label for="txtfechaFactura">Fecha de la Factura</label>
+            </div>
+
+            <!-- Campo para Importe -->
+            <div class="form-floating mb-3">
+                <input type="number" class="form-control" id="txtimporteVenta" th:field="*{importeVenta}"
+                       placeholder="Ejemplo: 1500.00" required min="0" step="0.01">
+                <label for="txtimporteVenta">Importe de la Venta</label>
+            </div>
+
+            <!-- Selección de Cliente -->
+            <div class="form-floating mb-3">
+                <select class="form-select" id="txtcliente" th:field="*{cliente}" required>
+                    <option value="" disabled selected>Seleccione un cliente</option>
+                    <option th:each="cliente : ${clientes}" th:value="${cliente.cod_cliente}"
+                            th:text="${cliente.nombre_cliente}"></option>
+                </select>
+                <label for="txtcliente">Cliente</label>
+            </div>
+
+            <!-- Selección de Vendedor -->
+            <div class="form-floating mb-3">
+                <select class="form-select" id="txtvendedor" th:field="*{vendedor}" required>
+                    <option value="" disabled selected>Seleccione un vendedor</option>
+                    <option th:each="vendedor : ${vendedores}" th:value="${vendedor.cod_vendedor}"
+                            th:text="${vendedor.nombre_vendedor}"></option>
+                </select>
+                <label for="txtvendedor">Vendedor</label>
+            </div>
+
+            <!-- Selección de Vehículo -->
+            <div class="form-floating mb-3">
+                <select class="form-select" id="txtvehiculo" th:field="*{vehiculo}" required>
+                    <option value="" disabled selected>Seleccione un vehículo</option>
+                    <option th:each="vehiculo : ${vehiculos}" th:value="${vehiculo.id}"
+                            th:text="${vehiculo.modelo.disenoModelo}"></option>
+                </select>
+                <label for="txtvehiculo">Vehículo</label>
+            </div>
+
+            <!-- Selección de Concesionaria -->
+            <div class="form-floating mb-3">
+                <select class="form-select" id="txtconcesionaria" th:field="*{concesionaria}" required>
+                    <option value="" disabled selected>Seleccione una concesionaria</option>
+                    <option th:each="concesionaria : ${concesionarias}" th:value="${concesionaria.codConcesionaria}"
+                            th:text="${concesionaria.nombreConcesionaria}"></option>
+                </select>
+                <label for="txtconcesionaria">Concesionaria</label>
+            </div>
+
+            <!-- Botones de acción -->
+            <button type="submit" class="btn btn-success shadow-sm">
+                <i class="bi bi-save2-fill me-1"></i> Registrar Factura
+            </button>
+            <a href="/facturas" class="btn btn-secondary shadow-sm">
+                <i class="bi bi-arrow-left me-1"></i> Cancelar
+            </a>
+        </form>
+    </div>
+</div>
+</body>
+</html>
